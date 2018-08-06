@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		AF90643121176EAD00526161 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90643021176EAD00526161 /* AppDelegate.swift */; };
-		AF90643321176EAD00526161 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90643221176EAD00526161 /* ViewController.swift */; };
 		AF90643621176EAD00526161 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF90643421176EAD00526161 /* Main.storyboard */; };
 		AF90643821176EAF00526161 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF90643721176EAF00526161 /* Assets.xcassets */; };
 		AF90643B21176EAF00526161 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF90643921176EAF00526161 /* LaunchScreen.storyboard */; };
+		AF906443211771C100526161 /* PlantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF906442211771C100526161 /* PlantsTableViewController.swift */; };
+		AF906445211771DF00526161 /* PlantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF906444211771DF00526161 /* PlantsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AF90642D21176EAD00526161 /* plants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = plants.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF90643021176EAD00526161 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF90643221176EAD00526161 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AF90643521176EAD00526161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF90643721176EAF00526161 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF90643A21176EAF00526161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF90643C21176EAF00526161 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF906442211771C100526161 /* PlantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsTableViewController.swift; sourceTree = "<group>"; };
+		AF906444211771DF00526161 /* PlantsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				AF90643021176EAD00526161 /* AppDelegate.swift */,
-				AF90643221176EAD00526161 /* ViewController.swift */,
 				AF90643421176EAD00526161 /* Main.storyboard */,
 				AF90643721176EAF00526161 /* Assets.xcassets */,
 				AF90643921176EAF00526161 /* LaunchScreen.storyboard */,
 				AF90643C21176EAF00526161 /* Info.plist */,
+				AF906442211771C100526161 /* PlantsTableViewController.swift */,
+				AF906444211771DF00526161 /* PlantsTableViewCell.swift */,
 			);
 			path = plants;
 			sourceTree = "<group>";
@@ -135,8 +138,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF90643321176EAD00526161 /* ViewController.swift in Sources */,
 				AF90643121176EAD00526161 /* AppDelegate.swift in Sources */,
+				AF906445211771DF00526161 /* PlantsTableViewCell.swift in Sources */,
+				AF906443211771C100526161 /* PlantsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +285,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XW9B7MQLBU;
 				INFOPLIST_FILE = plants/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,6 +303,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XW9B7MQLBU;
 				INFOPLIST_FILE = plants/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
