@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tgt-rU-acf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VQ8-hs-MbQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Plants Table View Controller-->
+        <!--暨大植物小圖鑑-->
         <scene sceneID="Gtx-0V-VEx">
             <objects>
                 <tableViewController id="Tgt-rU-acf" customClass="PlantsTableViewController" customModule="plants" customModuleProvider="target" sceneMemberID="viewController">
@@ -73,6 +74,7 @@
                                     <outlet property="nameLabel" destination="4rS-46-s09" id="5B4-1w-3ud"/>
                                     <outlet property="plantsimage" destination="wmV-PZ-iNx" id="qtz-US-alg"/>
                                     <outlet property="typeLabel" destination="KzD-nO-LAF" id="Jzg-cp-pd8"/>
+                                    <segue destination="RAQ-0E-uh2" kind="show" identifier="showplantsdetail" id="Zdf-TM-cHM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -81,10 +83,91 @@
                             <outlet property="delegate" destination="Tgt-rU-acf" id="BH4-df-TXt"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="暨大植物小圖鑑" id="33y-4w-m0R"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KkH-P6-K4i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="420" y="-160"/>
+            <point key="canvasLocation" x="1359.2" y="-160.56971514242881"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="45p-nj-njF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VQ8-hs-MbQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XvQ-W0-5NC">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Tgt-rU-acf" kind="relationship" relationship="rootViewController" id="NOj-6q-nno"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T9u-n9-nfT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="420" y="-160.56971514242881"/>
+        </scene>
+        <!--Plants Detail View Controller-->
+        <scene sceneID="fL6-7e-9Tp">
+            <objects>
+                <viewController id="RAQ-0E-uh2" customClass="PlantsDetailViewController" customModule="plants" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jhw-1q-bKj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iW1-dy-fPl">
+                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="375" id="YkE-Rv-T9H"/>
+                                    <constraint firstAttribute="width" constant="375" id="dNR-jp-WPY"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="O6q-K8-yXl">
+                                <rect key="frame" x="16" y="460" width="78.5" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soc-K0-9MZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="78.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Heh-Zz-ac2">
+                                        <rect key="frame" x="0.0" y="46" width="75.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CY-sR-PiA">
+                                        <rect key="frame" x="0.0" y="92" width="42" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iW1-dy-fPl" firstAttribute="leading" secondItem="Tbk-Ew-Dp8" secondAttribute="leading" id="Cs2-tG-JPB"/>
+                            <constraint firstItem="Tbk-Ew-Dp8" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="O6q-K8-yXl" secondAttribute="trailing" constant="293.5" id="F2V-rw-bdm"/>
+                            <constraint firstItem="O6q-K8-yXl" firstAttribute="leading" secondItem="Tbk-Ew-Dp8" secondAttribute="leading" constant="16" id="FPk-Rl-F4Z"/>
+                            <constraint firstItem="Tbk-Ew-Dp8" firstAttribute="bottom" secondItem="O6q-K8-yXl" secondAttribute="bottom" constant="79" id="Fip-gq-Hyp"/>
+                            <constraint firstItem="iW1-dy-fPl" firstAttribute="trailing" secondItem="Tbk-Ew-Dp8" secondAttribute="trailing" id="mjq-FT-dDx"/>
+                            <constraint firstItem="O6q-K8-yXl" firstAttribute="top" secondItem="iW1-dy-fPl" secondAttribute="bottom" constant="21" id="omI-V4-wp7"/>
+                            <constraint firstItem="iW1-dy-fPl" firstAttribute="top" secondItem="Tbk-Ew-Dp8" secondAttribute="top" id="tVx-HU-pe2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Tbk-Ew-Dp8"/>
+                    </view>
+                    <connections>
+                        <outlet property="Plantsimg" destination="iW1-dy-fPl" id="6iT-3U-tH4"/>
+                        <outlet property="Plantslocation" destination="Heh-Zz-ac2" id="nLq-FS-nrk"/>
+                        <outlet property="Plantsname" destination="soc-K0-9MZ" id="ts6-N1-0z2"/>
+                        <outlet property="Plantstype" destination="0CY-sR-PiA" id="fWn-zu-jo9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="35d-92-EHp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2176.8000000000002" y="-161.46926536731635"/>
         </scene>
     </scenes>
 </document>

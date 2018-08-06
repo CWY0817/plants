@@ -17,6 +17,7 @@ class PlantsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,7 +54,7 @@ class PlantsTableViewController: UITableViewController {
     }
     
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+   /* override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //建立一個選單作為動作清單
         let optionMenu = UIAlertController(title:nil,message:"What do you want to do?",preferredStyle:.actionSheet)
@@ -119,7 +120,7 @@ class PlantsTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: false)
         
         present(optionMenu,animated: true,completion: nil)
-    }
+    }*/
     
     //向左滑動
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
@@ -185,7 +186,18 @@ class PlantsTableViewController: UITableViewController {
         
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showplantsdetail"{
+            if let indexPath = tableView.indexPathForSelectedRow{
+                let destination = segue.destination as!PlantsDetailViewController
+                destination.Plantsimgname = self.PlantsName[indexPath.row]
+                destination.plantsname = self.PlantsName[indexPath.row]
+                destination.plantslocation = self.PlantsLocation[indexPath.row]
+                destination.plantstype = self.PlantsType[indexPath.row]
+            }
+        }
+        
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
