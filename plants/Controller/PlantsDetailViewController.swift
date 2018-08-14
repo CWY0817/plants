@@ -19,7 +19,9 @@ class PlantsDetailViewController: UIViewController {
     
     @IBOutlet var Plantstype: UILabel!
 
-    @IBOutlet var okok : UIImageView!
+    //@IBOutlet var okok : UIImageView!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

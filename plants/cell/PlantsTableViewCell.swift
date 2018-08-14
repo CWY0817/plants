@@ -19,6 +19,7 @@ class PlantsTableViewCell: UITableViewCell {
             plantsimage.clipsToBounds = true
         }
     }
+    @IBOutlet var heartIcon : UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

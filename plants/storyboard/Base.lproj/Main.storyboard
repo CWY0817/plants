@@ -26,8 +26,15 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-tick" translatesAutoresizingMaskIntoConstraints="NO" id="AUT-UN-dbr">
+                                            <rect key="frame" x="340" y="6" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="9oF-gV-0yV"/>
+                                                <constraint firstAttribute="width" constant="20" id="Lik-Cc-ZNy"/>
+                                            </constraints>
+                                        </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="y43-Or-4O5">
-                                            <rect key="frame" x="6" y="2" width="369" height="76"/>
+                                            <rect key="frame" x="6" y="6" width="110" height="60"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wmV-PZ-iNx">
                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -37,7 +44,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="hWh-Ao-9B3">
-                                                    <rect key="frame" x="75" y="0.0" width="294" height="58.5"/>
+                                                    <rect key="frame" x="75" y="0.0" width="35" height="58.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rS-46-s09">
                                                             <rect key="frame" x="0.0" y="0.0" width="35" height="20.5"/>
@@ -63,13 +70,17 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="y43-Or-4O5" firstAttribute="top" secondItem="uKj-wK-BBT" secondAttribute="top" constant="2" id="344-LX-zYY"/>
-                                        <constraint firstItem="y43-Or-4O5" firstAttribute="leading" secondItem="uKj-wK-BBT" secondAttribute="leading" constant="6" id="9d6-0W-8Rk"/>
-                                        <constraint firstAttribute="trailing" secondItem="y43-Or-4O5" secondAttribute="trailing" id="OIq-jh-FfR"/>
-                                        <constraint firstAttribute="bottom" secondItem="y43-Or-4O5" secondAttribute="bottom" constant="1.5" id="z64-oH-byw"/>
+                                        <constraint firstItem="AUT-UN-dbr" firstAttribute="leading" relation="lessThanOrEqual" secondItem="y43-Or-4O5" secondAttribute="trailing" constant="224" id="0s7-Yo-dnh"/>
+                                        <constraint firstAttribute="bottom" secondItem="AUT-UN-dbr" secondAttribute="bottom" constant="53.5" id="66P-Ot-1bL"/>
+                                        <constraint firstItem="AUT-UN-dbr" firstAttribute="top" secondItem="uKj-wK-BBT" secondAttribute="top" constant="6" id="Aw7-T1-tpI"/>
+                                        <constraint firstAttribute="bottom" secondItem="y43-Or-4O5" secondAttribute="bottom" constant="13.5" id="Tl9-Ge-9N2"/>
+                                        <constraint firstAttribute="trailing" secondItem="AUT-UN-dbr" secondAttribute="trailing" constant="15" id="Xo7-9B-VeY"/>
+                                        <constraint firstItem="y43-Or-4O5" firstAttribute="top" secondItem="uKj-wK-BBT" secondAttribute="top" constant="6" id="cOE-WR-wwm"/>
+                                        <constraint firstItem="y43-Or-4O5" firstAttribute="leading" secondItem="uKj-wK-BBT" secondAttribute="leading" constant="6" id="lB1-pY-taM"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="heartIcon" destination="AUT-UN-dbr" id="cke-zd-jbJ"/>
                                     <outlet property="locationLabel" destination="Egt-oj-OLc" id="aRI-1y-7g2"/>
                                     <outlet property="nameLabel" destination="4rS-46-s09" id="5B4-1w-3ud"/>
                                     <outlet property="plantsimage" destination="wmV-PZ-iNx" id="qtz-US-alg"/>
@@ -170,4 +181,7 @@
             <point key="canvasLocation" x="2176.8000000000002" y="-161.46926536731635"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart-tick" width="22" height="21"/>
+    </resources>
 </document>

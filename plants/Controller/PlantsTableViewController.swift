@@ -66,8 +66,7 @@ class PlantsTableViewController: UITableViewController {
         cell.locationLabel.text = "位置: " + plants[indexPath.row].location
         cell.typeLabel.text = "特徵: " + plants[indexPath.row].type
         cell.plantsimage.image = UIImage(named: plants[indexPath.row].image)
-        
-        cell.accessoryType = plants[indexPath.row].isee ? .checkmark : .none
+        cell.heartIcon.isHidden = plants[indexPath.row].isee ? false : true
 
         return cell
     }
@@ -186,8 +185,8 @@ class PlantsTableViewController: UITableViewController {
         let booling2 = plants[indexPath.row].isee ? false : true
         
         let checkAction2 = UIContextualAction(style:.normal,title:title2){(action,sourceView,completionHandler) in
-            let cell = tableView.cellForRow(at: indexPath)
-            cell?.accessoryType = booling2 ? .checkmark : .none
+            let cell = tableView.cellForRow(at: indexPath)as!PlantsTableViewCell
+            cell.heartIcon.isHidden = booling2 ? false : true
             self.plants[indexPath.row].isee = booling2
             completionHandler(true)
         }
