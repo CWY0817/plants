@@ -9,26 +9,24 @@
 import UIKit
 
 class PlantsDetailViewController: UIViewController {
+    var plants: Plants = Plants()
+    
     @IBOutlet var Plantsimg: UIImageView!
-    var Plantsimgname = ""
     
     @IBOutlet var Plantsname: UILabel!
-    var plantsname = ""
     
     @IBOutlet var Plantslocation: UILabel!
-    var plantslocation = ""
     
     @IBOutlet var Plantstype: UILabel!
-    var plantstype = ""
 
     @IBOutlet var okok : UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Plantsimg.image = UIImage(named: Plantsimgname)
-        Plantsname.text = plantsname
-        Plantslocation.text = "位置: " + plantslocation
-        Plantstype.text = "特徵: " + plantstype
+        Plantsimg.image = UIImage(named: plants.image)
+        Plantsname.text = plants.name
+        Plantslocation.text = "位置: " + plants.location
+        Plantstype.text = "特徵: " + plants.type
         navigationItem.largeTitleDisplayMode = .never
         // Do any additional setup after loading the view.
     }

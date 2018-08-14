@@ -10,10 +10,26 @@ import UIKit
 
 class PlantsTableViewController: UITableViewController {
     
-    var PlantsName = ["南天竹","海桐","石栗","五掌楠","楓香","黃花風鈴木","烏皮九芎","芒果","鐵冬青","風鈴木","黃鵪菜","江某","台灣赤楠","桂花","奧氏虎皮楠","欖仁樹","台灣海桐","九芎"]
-    var PlantsLocation = ["圖書管前","管院步道旁","香楠步道旁","行政大樓旁","行政大樓旁","科院前主環道內草皮","機車道警衛室旁","管院旁","科院外環道","暨大7-11後","人文學院","機車道","暨大7-11前","暨大7-11旁","行政大樓停車場旁草地","綜合大樓停車場旁","科一停車場","機車道"]
-    var PlantsType = ["葉為三回羽狀複葉","葉簇生枝端,呈倒卵形","葉脈明顯,有明顯星狀毛","葉輪生,離基三出脈","葉多為三裂","掌狀複葉,葉形略呈倒卵形","葉脈有毛","圓錐花序,葉脈明顯","花梗無毛,葉光滑","掌狀複葉,有鋸齒緣","根生葉,羽狀深裂","幼樹上的小葉會不規則裂且為掌狀複葉","葉對生,葉背紋路細緻明顯","葉全緣或細鋸齒","莖直立或斜上","花雄蕊十枚,內外兩圈各五枚","葉搓揉會有特殊香味","光滑的樹幹"]
-    var PlantsBool = Array(repeating:false, count:21)
+    var plants:[Plants]=[
+        Plants(name:"南天竹", type:"葉為三回羽狀複葉" , location:"圖書管前" , image:"南天竹1" , isee: false),
+        Plants(name:"海桐", type:"葉簇生枝端,呈倒卵形" , location:"管院步道旁" , image: "海桐1", isee: false),
+        Plants(name:"石栗", type:"葉脈明顯,有明顯星狀毛" ,location:"香楠步道旁" , image:"石栗1", isee: false),
+        Plants(name:"五掌楠", type:"葉輪生,離基三出脈" , location:"行政大樓旁" , image:"五掌楠1" , isee: false),
+        Plants(name:"楓香", type:"葉多為三裂" , location:"行政大樓旁" , image:"楓香1" , isee: false),
+        Plants(name:"黃花風鈴木", type:"掌狀複葉,葉形略呈倒卵形" , location:"科院前主環道內草皮" , image:"黃花風鈴木1" , isee: false),
+        Plants(name:"烏皮九芎", type:"葉脈有毛" , location:"機車道警衛室旁" , image:"烏皮九芎1" , isee: false),
+        Plants(name:"芒果", type:"圓錐花序,葉脈明顯" , location:"管院旁" , image:"芒果1" , isee: false),
+        Plants(name:"鐵冬青", type:"花梗無毛,葉光滑" , location:"科院外環道" , image:"鐵冬青1" , isee: false),
+        Plants(name:"風鈴木", type:"掌狀複葉,有鋸齒緣" , location:"暨大7-11後" , image:"風鈴木1" , isee: false),
+        Plants(name:"黃鵪菜", type:"根生葉,羽狀深裂" , location:"人文學院" , image:"黃鵪菜1" , isee: false),
+        Plants(name:"江某", type:"幼樹上的小葉會不規則裂且為掌狀複葉" , location:"機車道" , image:"江某1" , isee: false),
+        Plants(name:"台灣赤楠", type:"葉對生,葉背紋路細緻明顯" , location:"暨大7-11前" , image:"台灣赤楠1" , isee: false),
+        Plants(name:"桂花", type:"葉全緣或細鋸齒" , location:"暨大7-11旁" , image:"桂花1" , isee: false),
+        Plants(name:"奧氏虎皮楠", type:"莖直立或斜上" , location:"行政大樓停車場旁草地" , image:"奧氏虎皮楠1" , isee: false),
+        Plants(name:"欖仁樹", type:"花雄蕊十枚,內外兩圈各五枚" , location:"綜合大樓停車場旁" , image:"欖仁樹1" , isee: false),
+        Plants(name:"台灣海桐", type:"葉搓揉會有特殊香味" , location:"科一停車場" , image:"台灣海桐1" , isee: false),
+        Plants(name:"九芎", type:"光滑的樹幹" , location:"機車道" , image:"九芎1" , isee: false)
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +50,7 @@ class PlantsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return PlantsName.count
+        return plants.count
     }
 
     
@@ -43,18 +59,18 @@ class PlantsTableViewController: UITableViewController {
         let cellidentifier = "Cell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellidentifier, for: indexPath)as! PlantsTableViewCell
 
-        cell.nameLabel.text = PlantsName[indexPath.row]
-        cell.locationLabel.text = "位置: " + PlantsLocation[indexPath.row]
-        cell.typeLabel.text = "特徵: " + PlantsType[indexPath.row]
-        cell.plantsimage.image = UIImage(named: PlantsName[indexPath.row])
+        cell.nameLabel.text = plants[indexPath.row].name
+        cell.locationLabel.text = "位置: " + plants[indexPath.row].location
+        cell.typeLabel.text = "特徵: " + plants[indexPath.row].type
+        cell.plantsimage.image = UIImage(named: plants[indexPath.row].image)
         
-        cell.accessoryType = PlantsBool[indexPath.row] ? .checkmark : .none
+        cell.accessoryType = plants[indexPath.row].isee ? .checkmark : .none
 
         return cell
     }
     
 
-   /* override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //建立一個選單作為動作清單
         let optionMenu = UIAlertController(title:nil,message:"What do you want to do?",preferredStyle:.actionSheet)
@@ -72,22 +88,19 @@ class PlantsTableViewController: UITableViewController {
         
         //刪除
         let deleteAction = UIAlertAction(title:"Delete",style:.destructive,handler:{(action:UIAlertAction!) -> Void in
-            self.PlantsName.remove(at: indexPath.row)
-            self.PlantsLocation.remove(at: indexPath.row)
-            self.PlantsType.remove(at: indexPath.row)
-            self.PlantsBool.remove(at: indexPath.row)
+            self.plants.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with:.fade)
         })
         optionMenu.addAction(deleteAction)
         
         //確認
-        let title1 = PlantsBool[indexPath.row] ? "Undo Check" : "Check"
-        let booling = PlantsBool[indexPath.row] ? false : true
+        let title1 = plants[indexPath.row].isee ? "Undo Check" : "Check"
+        let booling = plants[indexPath.row].isee ? false : true
         
         let checkAction = UIAlertAction(title:title1,style:.default,handler: {(aciton:UIAlertAction!) -> Void in
             let cell = tableView.cellForRow(at: indexPath)
             cell?.accessoryType = booling ? .checkmark : .none
-            self.PlantsBool[indexPath.row] = booling
+            self.plants[indexPath.row].isee = booling
         })
         optionMenu.addAction(checkAction)
         
@@ -97,7 +110,7 @@ class PlantsTableViewController: UITableViewController {
             let sharetext = "去看看這植物吧🌳"
             
             let activityController : UIActivityViewController
-            if let shareimage = UIImage(named: self.PlantsName[indexPath.row]){
+            if let shareimage = UIImage(named: self.plants[indexPath.row].image){
                 activityController = UIActivityViewController(activityItems: [shareimage,sharetext], applicationActivities: nil)
             }
             else{
@@ -120,7 +133,7 @@ class PlantsTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: false)
         
         present(optionMenu,animated: true,completion: nil)
-    }*/
+    }
     
     //向左滑動
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
@@ -128,10 +141,7 @@ class PlantsTableViewController: UITableViewController {
         //刪除
         let deleteAction = UIContextualAction(style:.destructive,title: "Delete"){(action,sourceView,completionHandler) in
             
-            self.PlantsName.remove(at: indexPath.row)
-            self.PlantsLocation.remove(at: indexPath.row)
-            self.PlantsType.remove(at: indexPath.row)
-            self.PlantsBool.remove(at: indexPath.row)
+            self.plants.remove(at: indexPath.row)
             
             self.tableView.deleteRows(at: [indexPath], with: .fade)
             
@@ -146,7 +156,7 @@ class PlantsTableViewController: UITableViewController {
             let sharetext = "去看看這植物吧🌳"
             
             let activityController : UIActivityViewController
-            if let shareimage = UIImage(named: self.PlantsName[indexPath.row]){
+            if let shareimage = UIImage(named: self.plants[indexPath.row].image){
                 activityController = UIActivityViewController(activityItems: [shareimage,sharetext], applicationActivities: nil)
             }
             else{
@@ -167,13 +177,13 @@ class PlantsTableViewController: UITableViewController {
         shareAction.image = UIImage(named: "share")
         
         //check
-        let title2 = PlantsBool[indexPath.row] ? "Undo Check" : "Check"
-        let booling2 = PlantsBool[indexPath.row] ? false : true
+        let title2 = plants[indexPath.row].isee ? "Undo Check" : "Check"
+        let booling2 = plants[indexPath.row].isee ? false : true
         
         let checkAction2 = UIContextualAction(style:.normal,title:title2){(action,sourceView,completionHandler) in
             let cell = tableView.cellForRow(at: indexPath)
             cell?.accessoryType = booling2 ? .checkmark : .none
-            self.PlantsBool[indexPath.row] = booling2
+            self.plants[indexPath.row].isee = booling2
             completionHandler(true)
         }
         let img = booling2 ? "tick" : "undo"
@@ -190,10 +200,7 @@ class PlantsTableViewController: UITableViewController {
         if segue.identifier == "showplantsdetail"{
             if let indexPath = tableView.indexPathForSelectedRow{
                 let destination = segue.destination as!PlantsDetailViewController
-                destination.Plantsimgname = self.PlantsName[indexPath.row]+"1"
-                destination.plantsname = self.PlantsName[indexPath.row]
-                destination.plantslocation = self.PlantsLocation[indexPath.row]
-                destination.plantstype = self.PlantsType[indexPath.row]
+                destination.plants = plants[indexPath.row]
             }
         }
         
