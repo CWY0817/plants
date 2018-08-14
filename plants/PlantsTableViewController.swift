@@ -174,8 +174,8 @@ class PlantsTableViewController: UITableViewController {
             let cell = tableView.cellForRow(at: indexPath)
             cell?.accessoryType = booling2 ? .checkmark : .none
             self.PlantsBool[indexPath.row] = booling2
+            completionHandler(true)
         }
-       // checkAction2.backgroundColor = UIColor(red:211.0/255.0,green:211.0/255.0,blue:211.0/255.0,alpha:1.0)
         let img = booling2 ? "tick" : "undo"
         checkAction2.image = UIImage(named: img)
         
@@ -190,7 +190,7 @@ class PlantsTableViewController: UITableViewController {
         if segue.identifier == "showplantsdetail"{
             if let indexPath = tableView.indexPathForSelectedRow{
                 let destination = segue.destination as!PlantsDetailViewController
-                destination.Plantsimgname = self.PlantsName[indexPath.row]
+                destination.Plantsimgname = self.PlantsName[indexPath.row]+"1"
                 destination.plantsname = self.PlantsName[indexPath.row]
                 destination.plantslocation = self.PlantsLocation[indexPath.row]
                 destination.plantstype = self.PlantsType[indexPath.row]

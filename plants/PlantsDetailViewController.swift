@@ -21,6 +21,7 @@ class PlantsDetailViewController: UIViewController {
     @IBOutlet var Plantstype: UILabel!
     var plantstype = ""
 
+    @IBOutlet var okok : UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,5 +37,12 @@ class PlantsDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+   /* var booling = false
+    @IBAction func button(sender:UIButton){
+        let title1 = booling ? "我不瞭解這植物" : "我瞭解這植物"
+        sender.titleLabel?.text = title1
+        //okok.isHidden = 
+        booling = true
+    }*/
 
 }
