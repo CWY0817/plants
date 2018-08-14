@@ -41,6 +41,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF31609521226C46003A3730 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AF906442211771C100526161 /* PlantsTableViewController.swift */,
+				AFCD75B721180B45002D13C1 /* PlantsDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AF31609621226C80003A3730 /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				AF90643921176EAF00526161 /* LaunchScreen.storyboard */,
+				AF90643421176EAD00526161 /* Main.storyboard */,
+			);
+			path = storyboard;
+			sourceTree = "<group>";
+		};
+		AF31609721226CA2003A3730 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				AF906444211771DF00526161 /* PlantsTableViewCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		AF31609821226CAF003A3730 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF31609221226477003A3730 /* Plants.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AF90642421176EAD00526161 = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +94,13 @@
 		AF90642F21176EAD00526161 /* plants */ = {
 			isa = PBXGroup;
 			children = (
+				AF31609621226C80003A3730 /* storyboard */,
+				AF31609821226CAF003A3730 /* Model */,
+				AF31609521226C46003A3730 /* Controller */,
+				AF31609721226CA2003A3730 /* cell */,
 				AF90643021176EAD00526161 /* AppDelegate.swift */,
-				AF90643421176EAD00526161 /* Main.storyboard */,
 				AF90643721176EAF00526161 /* Assets.xcassets */,
-				AF90643921176EAF00526161 /* LaunchScreen.storyboard */,
 				AF90643C21176EAF00526161 /* Info.plist */,
-				AF906442211771C100526161 /* PlantsTableViewController.swift */,
-				AF906444211771DF00526161 /* PlantsTableViewCell.swift */,
-				AFCD75B721180B45002D13C1 /* PlantsDetailViewController.swift */,
-				AF31609221226477003A3730 /* Plants.swift */,
 			);
 			path = plants;
 			sourceTree = "<group>";

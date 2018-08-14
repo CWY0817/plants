@@ -10,6 +10,18 @@ import UIKit
 
 class PlantsTableViewController: UITableViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    
+    // MARK: - 植物class陣列
     var plants:[Plants]=[
         Plants(name:"南天竹", type:"葉為三回羽狀複葉" , location:"圖書管前" , image:"南天竹1" , isee: false),
         Plants(name:"海桐", type:"葉簇生枝端,呈倒卵形" , location:"管院步道旁" , image: "海桐1", isee: false),
@@ -31,16 +43,7 @@ class PlantsTableViewController: UITableViewController {
         Plants(name:"九芎", type:"光滑的樹幹" , location:"機車道" , image:"九芎1" , isee: false)
     ]
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -53,7 +56,7 @@ class PlantsTableViewController: UITableViewController {
         return plants.count
     }
 
-    
+    //MARK: - 建立Cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellidentifier = "Cell"
@@ -69,8 +72,8 @@ class PlantsTableViewController: UITableViewController {
         return cell
     }
     
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    // MARK: - 彈出清單
+    /*override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //建立一個選單作為動作清單
         let optionMenu = UIAlertController(title:nil,message:"What do you want to do?",preferredStyle:.actionSheet)
@@ -133,9 +136,11 @@ class PlantsTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: false)
         
         present(optionMenu,animated: true,completion: nil)
-    }
+    }*/
     
-    //向左滑動
+    
+    
+    //MARK: - 向左滑動
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
         
         //刪除
@@ -196,6 +201,7 @@ class PlantsTableViewController: UITableViewController {
         
     }
     
+    // MARK: - 傳遞資料給另一個視圖
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showplantsdetail"{
             if let indexPath = tableView.indexPathForSelectedRow{
