@@ -65,80 +65,12 @@ class PlantsTableViewController: UITableViewController {
         cell.nameLabel.text = plants[indexPath.row].name
         cell.locationLabel.text = "位置: " + plants[indexPath.row].location
         cell.typeLabel.text = "特徵: " + plants[indexPath.row].type
-        cell.plantsimage.image = UIImage(named: plants[indexPath.row].image)
+        cell.plantsimage.image = UIImage(named: plants[indexPath.row].name)
         cell.heartIcon.isHidden = plants[indexPath.row].isee ? false : true
 
         return cell
     }
-    
-    // MARK: - 彈出清單
-    /*override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        //建立一個選單作為動作清單
-        let optionMenu = UIAlertController(title:nil,message:"What do you want to do?",preferredStyle:.actionSheet)
-        
-        if let popoverController = optionMenu.popoverPresentationController{
-            if let cell = tableView.cellForRow(at: indexPath){
-                popoverController.sourceView = cell
-                popoverController.sourceRect = cell.bounds
-            }
-        }
-        
-        //取消
-        let cancelAction = UIAlertAction(title:"Cancel",style:.cancel,handler:nil)
-        optionMenu.addAction(cancelAction)
-        
-        //刪除
-        let deleteAction = UIAlertAction(title:"Delete",style:.destructive,handler:{(action:UIAlertAction!) -> Void in
-            self.plants.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with:.fade)
-        })
-        optionMenu.addAction(deleteAction)
-        
-        //確認
-        let title1 = plants[indexPath.row].isee ? "Undo Check" : "Check"
-        let booling = plants[indexPath.row].isee ? false : true
-        
-        let checkAction = UIAlertAction(title:title1,style:.default,handler: {(aciton:UIAlertAction!) -> Void in
-            let cell = tableView.cellForRow(at: indexPath)
-            cell?.accessoryType = booling ? .checkmark : .none
-            self.plants[indexPath.row].isee = booling
-        })
-        optionMenu.addAction(checkAction)
-        
-        //分享
-        let shareAction = UIAlertAction(title:"Share",style:.default,handler:{(action:UIAlertAction!) -> Void in
-            
-            let sharetext = "去看看這植物吧🌳"
-            
-            let activityController : UIActivityViewController
-            if let shareimage = UIImage(named: self.plants[indexPath.row].image){
-                activityController = UIActivityViewController(activityItems: [shareimage,sharetext], applicationActivities: nil)
-            }
-            else{
-                activityController = UIActivityViewController(activityItems: [sharetext], applicationActivities: nil)
-            }
-            
-            if let popoverController = activityController.popoverPresentationController{
-                if let cell = tableView.cellForRow(at: indexPath){
-                    popoverController.sourceView = cell
-                    popoverController.sourceRect = cell.bounds
-                }
-            }
-            
-            self.present(activityController,animated: true,completion: nil)
-        })
-        optionMenu.addAction(shareAction)
-        
-        
-        //取消選取列
-        tableView.deselectRow(at: indexPath, animated: false)
-        
-        present(optionMenu,animated: true,completion: nil)
-    }*/
-    
-    
-    
+
     //MARK: - 向左滑動
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
         
