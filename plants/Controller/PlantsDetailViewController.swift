@@ -9,15 +9,11 @@
 import UIKit
 
 class PlantsDetailViewController: UIViewController {
+    
+    
     var plants: Plants = Plants()
-    
-    @IBOutlet var Plantsimg: UIImageView!
-    
-    @IBOutlet var Plantsname: UILabel!
-    
-    @IBOutlet var Plantslocation: UILabel!
-    
-    @IBOutlet var Plantstype: UILabel!
+    @IBOutlet var tableView:UITableView!
+    @IBOutlet var headerView: PlantsDetailHeaderView!
 
     //@IBOutlet var okok : UIImageView!
     
@@ -25,11 +21,13 @@ class PlantsDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Plantsimg.image = UIImage(named: plants.image)
-        Plantsname.text = plants.name
-        Plantslocation.text = "位置: " + plants.location
-        Plantstype.text = "特徵: " + plants.type
         navigationItem.largeTitleDisplayMode = .never
+        
+        //設定頭部視圖
+        headerView.headerimageView.image = UIImage(named: plants.image)
+        headerView.nameLabel.text = plants.name
+       
+        
         // Do any additional setup after loading the view.
     }
 
@@ -37,12 +35,5 @@ class PlantsDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-   /* var booling = false
-    @IBAction func button(sender:UIButton){
-        let title1 = booling ? "我不瞭解這植物" : "我瞭解這植物"
-        sender.titleLabel?.text = title1
-        //okok.isHidden = 
-        booling = true
-    }*/
 
 }
