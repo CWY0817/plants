@@ -11,5 +11,9 @@ import UIKit
 class PlantsDetailHeaderView: UIView {
 
     @IBOutlet var headerimageView:UIImageView!
-    @IBOutlet var nameLabel:UILabel!
+    @IBOutlet var nameLabel:UILabel!{
+        didSet {
+            nameLabel.numberOfLines = 0
+        }
+    }
 }

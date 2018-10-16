@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AF31609321226477003A3730 /* Plants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF31609221226477003A3730 /* Plants.swift */; };
+		AF70316B2175C13C00B0B11B /* PlantsDetailSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF70316A2175C13C00B0B11B /* PlantsDetailSeparatorCell.swift */; };
+		AF70316D2175C1BB00B0B11B /* PlantsDetailMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF70316C2175C1BB00B0B11B /* PlantsDetailMapCell.swift */; };
 		AF90643121176EAD00526161 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90643021176EAD00526161 /* AppDelegate.swift */; };
 		AF90643621176EAD00526161 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF90643421176EAD00526161 /* Main.storyboard */; };
 		AF90643821176EAF00526161 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF90643721176EAF00526161 /* Assets.xcassets */; };
@@ -15,11 +17,26 @@
 		AF906443211771C100526161 /* PlantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF906442211771C100526161 /* PlantsTableViewController.swift */; };
 		AF906445211771DF00526161 /* PlantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF906444211771DF00526161 /* PlantsTableViewCell.swift */; };
 		AFB1914B2174DB48005E81F5 /* PlantsDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB1914A2174DB48005E81F5 /* PlantsDetailHeaderView.swift */; };
+		AFB1914D2174E09F005E81F5 /* PlantsDetailIconTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB1914C2174E09F005E81F5 /* PlantsDetailIconTextCell.swift */; };
+		AFB1914F2174E734005E81F5 /* PlantsDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB1914E2174E734005E81F5 /* PlantsDetailTextCell.swift */; };
+		AFB1915C2174EE2B005E81F5 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191512174EE2A005E81F5 /* Rubik-Light.ttf */; };
+		AFB1915D2174EE2B005E81F5 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = AFB191522174EE2A005E81F5 /* OFL.txt */; };
+		AFB1915E2174EE2B005E81F5 /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191532174EE2A005E81F5 /* Rubik-BoldItalic.ttf */; };
+		AFB1915F2174EE2B005E81F5 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191542174EE2A005E81F5 /* Rubik-Medium.ttf */; };
+		AFB191602174EE2B005E81F5 /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191552174EE2A005E81F5 /* Rubik-MediumItalic.ttf */; };
+		AFB191612174EE2B005E81F5 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191562174EE2A005E81F5 /* Rubik-Bold.ttf */; };
+		AFB191622174EE2B005E81F5 /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191572174EE2A005E81F5 /* Rubik-LightItalic.ttf */; };
+		AFB191632174EE2B005E81F5 /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191582174EE2A005E81F5 /* Rubik-Black.ttf */; };
+		AFB191642174EE2B005E81F5 /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191592174EE2A005E81F5 /* Rubik-Italic.ttf */; };
+		AFB191652174EE2B005E81F5 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB1915A2174EE2B005E81F5 /* Rubik-Regular.ttf */; };
+		AFB191662174EE2B005E81F5 /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB1915B2174EE2B005E81F5 /* Rubik-BlackItalic.ttf */; };
 		AFCD75B821180B45002D13C1 /* PlantsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD75B721180B45002D13C1 /* PlantsDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AF31609221226477003A3730 /* Plants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plants.swift; sourceTree = "<group>"; };
+		AF70316A2175C13C00B0B11B /* PlantsDetailSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailSeparatorCell.swift; sourceTree = "<group>"; };
+		AF70316C2175C1BB00B0B11B /* PlantsDetailMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailMapCell.swift; sourceTree = "<group>"; };
 		AF90642D21176EAD00526161 /* plants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = plants.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF90643021176EAD00526161 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF90643521176EAD00526161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -29,6 +46,19 @@
 		AF906442211771C100526161 /* PlantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsTableViewController.swift; sourceTree = "<group>"; };
 		AF906444211771DF00526161 /* PlantsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsTableViewCell.swift; sourceTree = "<group>"; };
 		AFB1914A2174DB48005E81F5 /* PlantsDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailHeaderView.swift; sourceTree = "<group>"; };
+		AFB1914C2174E09F005E81F5 /* PlantsDetailIconTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailIconTextCell.swift; sourceTree = "<group>"; };
+		AFB1914E2174E734005E81F5 /* PlantsDetailTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailTextCell.swift; sourceTree = "<group>"; };
+		AFB191512174EE2A005E81F5 /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
+		AFB191522174EE2A005E81F5 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		AFB191532174EE2A005E81F5 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
+		AFB191542174EE2A005E81F5 /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		AFB191552174EE2A005E81F5 /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
+		AFB191562174EE2A005E81F5 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
+		AFB191572174EE2A005E81F5 /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
+		AFB191582174EE2A005E81F5 /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Black.ttf"; sourceTree = "<group>"; };
+		AFB191592174EE2A005E81F5 /* Rubik-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Italic.ttf"; sourceTree = "<group>"; };
+		AFB1915A2174EE2B005E81F5 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		AFB1915B2174EE2B005E81F5 /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
 		AFCD75B721180B45002D13C1 /* PlantsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +110,7 @@
 		AF90642421176EAD00526161 = {
 			isa = PBXGroup;
 			children = (
+				AFB191502174EE0F005E81F5 /* Source */,
 				AF90642F21176EAD00526161 /* plants */,
 				AF90642E21176EAD00526161 /* Products */,
 			);
@@ -112,8 +143,30 @@
 			isa = PBXGroup;
 			children = (
 				AFB1914A2174DB48005E81F5 /* PlantsDetailHeaderView.swift */,
+				AFB1914C2174E09F005E81F5 /* PlantsDetailIconTextCell.swift */,
+				AFB1914E2174E734005E81F5 /* PlantsDetailTextCell.swift */,
+				AF70316A2175C13C00B0B11B /* PlantsDetailSeparatorCell.swift */,
+				AF70316C2175C1BB00B0B11B /* PlantsDetailMapCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		AFB191502174EE0F005E81F5 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				AFB191522174EE2A005E81F5 /* OFL.txt */,
+				AFB191582174EE2A005E81F5 /* Rubik-Black.ttf */,
+				AFB1915B2174EE2B005E81F5 /* Rubik-BlackItalic.ttf */,
+				AFB191562174EE2A005E81F5 /* Rubik-Bold.ttf */,
+				AFB191532174EE2A005E81F5 /* Rubik-BoldItalic.ttf */,
+				AFB191592174EE2A005E81F5 /* Rubik-Italic.ttf */,
+				AFB191512174EE2A005E81F5 /* Rubik-Light.ttf */,
+				AFB191572174EE2A005E81F5 /* Rubik-LightItalic.ttf */,
+				AFB191542174EE2A005E81F5 /* Rubik-Medium.ttf */,
+				AFB191552174EE2A005E81F5 /* Rubik-MediumItalic.ttf */,
+				AFB1915A2174EE2B005E81F5 /* Rubik-Regular.ttf */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,9 +227,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFB1915D2174EE2B005E81F5 /* OFL.txt in Resources */,
+				AFB191622174EE2B005E81F5 /* Rubik-LightItalic.ttf in Resources */,
+				AFB191612174EE2B005E81F5 /* Rubik-Bold.ttf in Resources */,
+				AFB191632174EE2B005E81F5 /* Rubik-Black.ttf in Resources */,
+				AFB191662174EE2B005E81F5 /* Rubik-BlackItalic.ttf in Resources */,
+				AFB1915E2174EE2B005E81F5 /* Rubik-BoldItalic.ttf in Resources */,
 				AF90643B21176EAF00526161 /* LaunchScreen.storyboard in Resources */,
+				AFB191602174EE2B005E81F5 /* Rubik-MediumItalic.ttf in Resources */,
+				AFB1915C2174EE2B005E81F5 /* Rubik-Light.ttf in Resources */,
+				AFB191642174EE2B005E81F5 /* Rubik-Italic.ttf in Resources */,
 				AF90643821176EAF00526161 /* Assets.xcassets in Resources */,
+				AFB191652174EE2B005E81F5 /* Rubik-Regular.ttf in Resources */,
 				AF90643621176EAD00526161 /* Main.storyboard in Resources */,
+				AFB1915F2174EE2B005E81F5 /* Rubik-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,8 +255,12 @@
 				AF90643121176EAD00526161 /* AppDelegate.swift in Sources */,
 				AF906445211771DF00526161 /* PlantsTableViewCell.swift in Sources */,
 				AFCD75B821180B45002D13C1 /* PlantsDetailViewController.swift in Sources */,
+				AF70316B2175C13C00B0B11B /* PlantsDetailSeparatorCell.swift in Sources */,
+				AF70316D2175C1BB00B0B11B /* PlantsDetailMapCell.swift in Sources */,
+				AFB1914D2174E09F005E81F5 /* PlantsDetailIconTextCell.swift in Sources */,
 				AFB1914B2174DB48005E81F5 /* PlantsDetailHeaderView.swift in Sources */,
 				AF906443211771C100526161 /* PlantsTableViewController.swift in Sources */,
+				AFB1914F2174E734005E81F5 /* PlantsDetailTextCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

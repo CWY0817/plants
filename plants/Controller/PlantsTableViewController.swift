@@ -13,6 +13,16 @@ class PlantsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default )
+        navigationController?.navigationBar.shadowImage = UIImage()
+        if let customFont = UIFont(name:"Rubik-Medium",size:40.0){
+            navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.foregroundColor : UIColor(red: 231.0/255.0 , green : 76.0/255.0 , blue: 60.0/255.0 , alpha: 1.0),NSAttributedStringKey.font: customFont ]
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(animated)
+        navigationController?.hidesBarsOnSwipe = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -23,24 +33,24 @@ class PlantsTableViewController: UITableViewController {
     
     // MARK: - 植物class陣列
     var plants:[Plants]=[
-        Plants(name:"南天竹", type:"葉為三回羽狀複葉" , location:"圖書管前" , image:"南天竹1" , isee: false),
-        Plants(name:"海桐", type:"葉簇生枝端,呈倒卵形" , location:"管院步道旁" , image: "海桐1", isee: false),
-        Plants(name:"石栗", type:"葉脈明顯,有明顯星狀毛" ,location:"香楠步道旁" , image:"石栗1", isee: false),
-        Plants(name:"五掌楠", type:"葉輪生,離基三出脈" , location:"行政大樓旁" , image:"五掌楠1" , isee: false),
-        Plants(name:"楓香", type:"葉多為三裂" , location:"行政大樓旁" , image:"楓香1" , isee: false),
-        Plants(name:"黃花風鈴木", type:"掌狀複葉,葉形略呈倒卵形" , location:"科院前主環道內草皮" , image:"黃花風鈴木1" , isee: false),
-        Plants(name:"烏皮九芎", type:"葉脈有毛" , location:"機車道警衛室旁" , image:"烏皮九芎1" , isee: false),
-        Plants(name:"芒果", type:"圓錐花序,葉脈明顯" , location:"管院旁" , image:"芒果1" , isee: false),
-        Plants(name:"鐵冬青", type:"花梗無毛,葉光滑" , location:"科院外環道" , image:"鐵冬青1" , isee: false),
-        Plants(name:"風鈴木", type:"掌狀複葉,有鋸齒緣" , location:"暨大7-11後" , image:"風鈴木1" , isee: false),
-        Plants(name:"黃鵪菜", type:"根生葉,羽狀深裂" , location:"人文學院" , image:"黃鵪菜1" , isee: false),
-        Plants(name:"江某", type:"幼樹上的小葉會不規則裂且為掌狀複葉" , location:"機車道" , image:"江某1" , isee: false),
-        Plants(name:"台灣赤楠", type:"葉對生,葉背紋路細緻明顯" , location:"暨大7-11前" , image:"台灣赤楠1" , isee: false),
-        Plants(name:"桂花", type:"葉全緣或細鋸齒" , location:"暨大7-11旁" , image:"桂花1" , isee: false),
-        Plants(name:"奧氏虎皮楠", type:"莖直立或斜上" , location:"行政大樓停車場旁草地" , image:"奧氏虎皮楠1" , isee: false),
-        Plants(name:"欖仁樹", type:"花雄蕊十枚,內外兩圈各五枚" , location:"綜合大樓停車場旁" , image:"欖仁樹1" , isee: false),
-        Plants(name:"台灣海桐", type:"葉搓揉會有特殊香味" , location:"科一停車場" , image:"台灣海桐1" , isee: false),
-        Plants(name:"九芎", type:"光滑的樹幹" , location:"機車道" , image:"九芎1" , isee: false)
+        Plants(name:"南天竹", type:"葉為三回羽狀複葉" , location:"圖書管前",isee: false),
+        Plants(name:"海桐", type:"葉簇生枝端,呈倒卵形" , location:"管院步道旁",isee: false),
+        Plants(name:"石栗", type:"葉脈明顯,有明顯星狀毛" ,location:"香楠步道旁",isee: false),
+        Plants(name:"五掌楠", type:"葉輪生,離基三出脈" , location:"行政大樓旁",isee: false),
+        Plants(name:"楓香", type:"葉多為三裂" , location:"行政大樓旁", isee: false),
+        Plants(name:"黃花風鈴木", type:"掌狀複葉,葉形略呈倒卵形" , location:"科院前主環道內草皮" , isee: false),
+        Plants(name:"烏皮九芎", type:"葉脈有毛" , location:"機車道警衛室旁" , isee: false),
+        Plants(name:"芒果", type:"圓錐花序,葉脈明顯" , location:"管院旁" , isee: false),
+        Plants(name:"鐵冬青", type:"花梗無毛,葉光滑" , location:"科院外環道" , isee: false),
+        Plants(name:"風鈴木", type:"掌狀複葉,有鋸齒緣" , location:"暨大7-11後" , isee: false),
+        Plants(name:"黃鵪菜", type:"根生葉,羽狀深裂" , location:"人文學院" ,  isee: false),
+        Plants(name:"江某", type:"幼樹上的小葉會不規則裂且為掌狀複葉" , location:"機車道" , isee: false),
+        Plants(name:"台灣赤楠", type:"葉對生,葉背紋路細緻明顯" , location:"暨大7-11前" , isee: false),
+        Plants(name:"桂花", type:"葉全緣或細鋸齒" , location:"暨大7-11旁" , isee: false),
+        Plants(name:"奧氏虎皮楠", type:"莖直立或斜上" , location:"行政大樓停車場旁草地" ,  isee: false),
+        Plants(name:"欖仁樹", type:"花雄蕊十枚,內外兩圈各五枚" , location:"綜合大樓停車場旁", isee: false),
+        Plants(name:"台灣海桐", type:"葉搓揉會有特殊香味" , location:"科一停車場" , isee: false),
+        Plants(name:"九芎", type:"光滑的樹幹" , location:"機車道" , isee: false)
     ]
 
     
@@ -92,7 +102,7 @@ class PlantsTableViewController: UITableViewController {
             let sharetext = "去看看這植物吧🌳"
             
             let activityController : UIActivityViewController
-            if let shareimage = UIImage(named: self.plants[indexPath.row].image){
+            if let shareimage = UIImage(named: self.plants[indexPath.row].name){
                 activityController = UIActivityViewController(activityItems: [shareimage,sharetext], applicationActivities: nil)
             }
             else{
