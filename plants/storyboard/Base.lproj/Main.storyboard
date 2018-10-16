@@ -329,10 +329,10 @@
             </objects>
             <point key="canvasLocation" x="2175.36231884058" y="-162.22826086956522"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="Akq-Ki-3iF">
             <objects>
-                <viewController id="tav-h1-urX" sceneMemberID="viewController">
+                <viewController id="tav-h1-urX" customClass="MapViewController" customModule="plants" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rqG-BJ-f7a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -350,6 +350,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Twt-1Z-hdn"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="xjh-6y-p6h" id="y0w-rc-vi6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0m3-0X-yEn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

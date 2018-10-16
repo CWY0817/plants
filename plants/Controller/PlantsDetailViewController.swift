@@ -78,6 +78,7 @@ class PlantsDetailViewController: UIViewController,UITableViewDataSource,UITable
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PlantsDetailMapCell.self), for: indexPath) as! PlantsDetailMapCell
+            cell.configure(location: plants.map)
 
             return cell
         default:
@@ -85,6 +86,13 @@ class PlantsDetailViewController: UIViewController,UITableViewDataSource,UITable
         }
     }
 
+    override func prepare(for segue: UIStoryboardSegue , sender: Any?){
+        if segue.identifier == "showMap"{
+            let destinationController = segue.destination as! MapViewController
+            destinationController.plants = plants
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

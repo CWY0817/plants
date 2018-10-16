@@ -33,24 +33,24 @@ class PlantsTableViewController: UITableViewController {
     
     // MARK: - 植物class陣列
     var plants:[Plants]=[
-        Plants(name:"南天竹", type:"葉為三回羽狀複葉" , location:"圖書管前",isee: false),
-        Plants(name:"海桐", type:"葉簇生枝端,呈倒卵形" , location:"管院步道旁",isee: false),
-        Plants(name:"石栗", type:"葉脈明顯,有明顯星狀毛" ,location:"香楠步道旁",isee: false),
-        Plants(name:"五掌楠", type:"葉輪生,離基三出脈" , location:"行政大樓旁",isee: false),
-        Plants(name:"楓香", type:"葉多為三裂" , location:"行政大樓旁", isee: false),
-        Plants(name:"黃花風鈴木", type:"掌狀複葉,葉形略呈倒卵形" , location:"科院前主環道內草皮" , isee: false),
-        Plants(name:"烏皮九芎", type:"葉脈有毛" , location:"機車道警衛室旁" , isee: false),
-        Plants(name:"芒果", type:"圓錐花序,葉脈明顯" , location:"管院旁" , isee: false),
-        Plants(name:"鐵冬青", type:"花梗無毛,葉光滑" , location:"科院外環道" , isee: false),
-        Plants(name:"風鈴木", type:"掌狀複葉,有鋸齒緣" , location:"暨大7-11後" , isee: false),
-        Plants(name:"黃鵪菜", type:"根生葉,羽狀深裂" , location:"人文學院" ,  isee: false),
-        Plants(name:"江某", type:"幼樹上的小葉會不規則裂且為掌狀複葉" , location:"機車道" , isee: false),
-        Plants(name:"台灣赤楠", type:"葉對生,葉背紋路細緻明顯" , location:"暨大7-11前" , isee: false),
-        Plants(name:"桂花", type:"葉全緣或細鋸齒" , location:"暨大7-11旁" , isee: false),
-        Plants(name:"奧氏虎皮楠", type:"莖直立或斜上" , location:"行政大樓停車場旁草地" ,  isee: false),
-        Plants(name:"欖仁樹", type:"花雄蕊十枚,內外兩圈各五枚" , location:"綜合大樓停車場旁", isee: false),
-        Plants(name:"台灣海桐", type:"葉搓揉會有特殊香味" , location:"科一停車場" , isee: false),
-        Plants(name:"九芎", type:"光滑的樹幹" , location:"機車道" , isee: false)
+        Plants(name:"南天竹", type:"葉為三回羽狀複葉" , location:"圖書館前",map:"台灣南投縣埔里鎮大學路500號",isee: false),
+        Plants(name:"海桐", type:"葉簇生枝端,呈倒卵形" , location:"管院步道旁",map:"台灣南投縣埔里鎮大學路470號管理學院",isee: false),
+        Plants(name:"石栗", type:"葉脈明顯,有明顯星狀毛" ,location:"香楠步道旁",map:"台灣南投縣埔里鎮香楠步道",isee: false),
+        Plants(name:"五掌楠", type:"葉輪生,離基三出脈" , location:"行政大樓旁",map:"台灣南投縣埔里鎮大學路1號行政大樓",isee: false),
+        Plants(name:"楓香", type:"葉多為三裂" , location:"行政大樓旁",map:"台灣南投縣埔里鎮大學路1號行政大樓", isee: false),
+        Plants(name:"黃花風鈴木", type:"掌狀複葉,葉形略呈倒卵形" , location:"科院前主環道內草皮" ,map:"台灣南投縣埔里鎮大學路301號", isee: false),
+        Plants(name:"烏皮九芎", type:"葉脈有毛" , location:"機車道警衛室旁" ,map:"台灣南投縣埔里鎮桃米路28號", isee: false),
+        Plants(name:"芒果", type:"圓錐花序,葉脈明顯" , location:"管院旁",map:"台灣南投縣埔里鎮大學路470號管理學院" , isee: false),
+        Plants(name:"鐵冬青", type:"花梗無毛,葉光滑" , location:"科院外環道" ,map:"台灣南投縣埔里鎮大學路301號", isee: false),
+        Plants(name:"風鈴木", type:"掌狀複葉,有鋸齒緣" , location:"暨大7-11後" ,map:"台灣南投縣埔里鎮大學路501號", isee: false),
+        Plants(name:"黃鵪菜", type:"根生葉,羽狀深裂" , location:"人文學院" ,map:"台灣南投縣埔里鎮大學路480號",  isee: false),
+        Plants(name:"江某", type:"幼樹上的小葉會不規則裂且為掌狀複葉" , location:"機車道",map:"台灣南投縣桃米路28號" , isee: false),
+        Plants(name:"台灣赤楠", type:"葉對生,葉背紋路細緻明顯" , location:"暨大7-11前",map:"台灣南投縣埔里鎮大學路501號" , isee: false),
+        Plants(name:"桂花", type:"葉全緣或細鋸齒" , location:"暨大7-11旁" ,map:"台灣南投縣埔里鎮大學路501號", isee: false),
+        Plants(name:"奧氏虎皮楠", type:"莖直立或斜上" , location:"行政大樓停車場旁草地" ,map:"台灣南投縣埔里鎮大學路1號行政大樓",  isee: false),
+        Plants(name:"欖仁樹", type:"花雄蕊十枚,內外兩圈各五枚" , location:"綜合大樓停車場旁",map:"台灣南投縣埔里鎮大學路490號", isee: false),
+        Plants(name:"台灣海桐", type:"葉搓揉會有特殊香味" , location:"科一停車場" ,map:"台灣南投縣埔里鎮大學路301號", isee: false),
+        Plants(name:"九芎", type:"光滑的樹幹" , location:"機車道" ,map:"台灣南投縣桃米路28號", isee: false)
     ]
 
     
