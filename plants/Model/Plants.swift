@@ -9,21 +9,41 @@
 import Foundation
 
 class Plants{
-    var name: String
-    var type: String
-    var location: String
-    var map : String
-    var isee: Bool
+    var Pid:Int32
+    var Cname: String
+    var Sname: String
+    var Othername: String
+    var Familia: String
+    var Originplace: String
+    var Distribution: String
+    var Application: String
+    var Leaf: String
+    var Stem: String
+    var Flower: String
+    var Fruit: String
+    var Startmonth : Int32
+    var Endmonth: Int32
+    var Isee: Bool
     
-    init(name: String,type: String,location: String,map : String,isee:Bool){
-        self.name = name
-        self.type = type
-        self.location = location
-        self.map = map
-        self.isee = isee
+    init(Pid:Int32 ,Cname: String,Sname: String,Othername: String,Familia: String,Originplace: String,Distribution: String,Application: String,Leaf: String,Stem: String,Flower: String,Fruit: String,Startmonth : Int32,Endmonth: Int32,Isee:Bool){
+        self.Pid = Pid
+        self.Cname = Cname
+        self.Sname = Sname
+        self.Othername = Othername
+        self.Familia = Familia
+        self.Originplace = Originplace
+        self.Distribution = Distribution
+        self.Application = Application
+        self.Leaf = Leaf
+        self.Stem = Stem
+        self.Flower = Flower
+        self.Fruit = Fruit
+        self.Startmonth = Startmonth
+        self.Endmonth = Endmonth
+        self.Isee = Isee
     }
     
     convenience init(){
-        self.init(name:"",type:"",location:"",map:"",isee:false)
+        self.init(Pid:0 ,Cname:"",Sname: "",Othername: "",Familia: "",Originplace:"",Distribution: "",Application:"",Leaf:"",Stem:"",Flower:"",Fruit:"",Startmonth :0,Endmonth:0,Isee:false)
     }
 }

@@ -12,6 +12,7 @@ class PlantsDetailViewController: UIViewController,UITableViewDataSource,UITable
     
     
     var plants: Plants = Plants()
+    var plantslocation: Plantslocation = Plantslocation()
     @IBOutlet var tableView:UITableView!
     @IBOutlet var headerView: PlantsDetailHeaderView!
 
@@ -27,16 +28,17 @@ class PlantsDetailViewController: UIViewController,UITableViewDataSource,UITable
         tableView.dataSource = self
         tableView.separatorStyle = .none
         
+        //導覽列
         navigationItem.largeTitleDisplayMode = .never
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.tintColor = .black
-        //tableView.contentInsetAdjustmentBehavior = .never
+        tableView.contentInsetAdjustmentBehavior = .never
         
         
         //設定頭部視圖
-        headerView.headerimageView.image = UIImage(named: plants.name)
-        headerView.nameLabel.text = plants.name
+        headerView.headerimageView.image = UIImage(named: plants.Cname)
+        headerView.nameLabel.text = plants.Cname
        
         
         // Do any additional setup after loading the view.
@@ -53,7 +55,7 @@ class PlantsDetailViewController: UIViewController,UITableViewDataSource,UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 12
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -61,25 +63,72 @@ class PlantsDetailViewController: UIViewController,UITableViewDataSource,UITable
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PlantsDetailIconTextCell.self), for: indexPath) as! PlantsDetailIconTextCell
-            cell.iconimageview.image=UIImage(named: "Location-2")
-            cell.locationtext.text = plants.location
+            cell.iconimageview.image = UIImage(named: "pen")
+            cell.familiatext.text = plants.Familia
             
             return cell
         case 1 :
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PlantsDetailTextCell.self), for: indexPath) as! PlantsDetailTextCell
             cell.iconImageView.image = UIImage(named: "Book-128")
-            cell.typetext.text = plants.type
+            cell.othernametext.text = plants.Sname
             
             return cell
-        case 2:
+        case 2 :
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PlantsDetailTextCell.self), for: indexPath) as! PlantsDetailTextCell
+            cell.iconImageView.image = UIImage(named: "Red_pin")
+            cell.othernametext.text = plants.Othername
+            
+            return cell
+        case 3 :
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PlantsDetailTextCell.self), for: indexPath) as! PlantsDetailTextCell
+            cell.iconImageView.image = UIImage(named: "earth")
+            cell.othernametext.text = plants.Originplace
+            
+            return cell
+        case 4 :
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PlantsDetailTextCell.self), for: indexPath) as! PlantsDetailTextCell
+            cell.iconImageView.image = UIImage(named: "location-4")
+            cell.othernametext.text = plants.Distribution
+            
+            return cell
+        case 5 :
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PlantsDetailTextCell.self), for: indexPath) as! PlantsDetailTextCell
+            cell.iconImageView.image = UIImage(named: "garden-1")
+            cell.othernametext.text = plants.Application
+            
+            return cell
+        case 6 :
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PlantsDetailTextCell.self), for: indexPath) as! PlantsDetailTextCell
+            cell.iconImageView.image = UIImage(named: "Tree")
+            cell.othernametext.text = plants.Stem
+            
+            return cell
+        case 7 :
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PlantsDetailTextCell.self), for: indexPath) as! PlantsDetailTextCell
+            cell.iconImageView.image = UIImage(named: "leaf-1")
+            cell.othernametext.text = plants.Leaf
+            
+            return cell
+        case 8 :
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PlantsDetailTextCell.self), for: indexPath) as! PlantsDetailTextCell
+            cell.iconImageView.image = UIImage(named: "flower")
+            cell.othernametext.text = plants.Flower
+            
+            return cell
+        case 9 :
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PlantsDetailTextCell.self), for: indexPath) as! PlantsDetailTextCell
+            cell.iconImageView.image = UIImage(named: "FRUIT-1")
+            cell.othernametext.text = plants.Fruit
+            
+            return cell
+        case 10:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PlantsDetailSeparatorCell.self), for: indexPath) as! PlantsDetailSeparatorCell
             cell.titleLabel.text = "How To Get There"
             
             return cell
-        case 3:
+        case 11:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PlantsDetailMapCell.self), for: indexPath) as! PlantsDetailMapCell
-            cell.configure(location: plants.map)
-
+            cell.configure(location: "台灣國立暨南國際大學" )
             return cell
         default:
             fatalError("Failed to instantiate the table view cell for detail view controller")
@@ -90,6 +139,7 @@ class PlantsDetailViewController: UIViewController,UITableViewDataSource,UITable
         if segue.identifier == "showMap"{
             let destinationController = segue.destination as! MapViewController
             destinationController.plants = plants
+            destinationController.plantslocation = plantslocation
         }
     }
     

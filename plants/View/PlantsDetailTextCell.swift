@@ -11,7 +11,11 @@ import UIKit
 class PlantsDetailTextCell: UITableViewCell {
     
     @IBOutlet var iconImageView:UIImageView!
-    @IBOutlet var typetext:UILabel!
+    @IBOutlet var othernametext:UILabel!{
+        didSet{
+            othernametext.numberOfLines = 0
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

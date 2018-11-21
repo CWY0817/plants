@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AF31609321226477003A3730 /* Plants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF31609221226477003A3730 /* Plants.swift */; };
+		AF4634BB21A54011009DB054 /* ncnuplant.sqlite-wal.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AF4634B821A54010009DB054 /* ncnuplant.sqlite-wal.sqlite */; };
+		AF4634BC21A54011009DB054 /* ncnuplant.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AF4634B921A54010009DB054 /* ncnuplant.sqlite */; };
+		AF4634BD21A54011009DB054 /* ncnuplant.sqlite-shm.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AF4634BA21A54011009DB054 /* ncnuplant.sqlite-shm.sqlite */; };
 		AF70316B2175C13C00B0B11B /* PlantsDetailSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF70316A2175C13C00B0B11B /* PlantsDetailSeparatorCell.swift */; };
 		AF70316D2175C1BB00B0B11B /* PlantsDetailMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF70316C2175C1BB00B0B11B /* PlantsDetailMapCell.swift */; };
 		AF70316F2175D52400B0B11B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF70316E2175D52400B0B11B /* MapViewController.swift */; };
@@ -17,25 +20,36 @@
 		AF90643B21176EAF00526161 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF90643921176EAF00526161 /* LaunchScreen.storyboard */; };
 		AF906443211771C100526161 /* PlantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF906442211771C100526161 /* PlantsTableViewController.swift */; };
 		AF906445211771DF00526161 /* PlantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF906444211771DF00526161 /* PlantsTableViewCell.swift */; };
+		AFB0F27C2192887900337185 /* Plantslocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB0F27B2192887900337185 /* Plantslocation.swift */; };
+		AFB0F27E2192893C00337185 /* Datatag.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB0F27D2192893C00337185 /* Datatag.swift */; };
+		AFB0F28F2192D88800337185 /* mushin.otf in Resources */ = {isa = PBXBuildFile; fileRef = AFB0F28D2192D88800337185 /* mushin.otf */; };
 		AFB1914B2174DB48005E81F5 /* PlantsDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB1914A2174DB48005E81F5 /* PlantsDetailHeaderView.swift */; };
 		AFB1914D2174E09F005E81F5 /* PlantsDetailIconTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB1914C2174E09F005E81F5 /* PlantsDetailIconTextCell.swift */; };
 		AFB1914F2174E734005E81F5 /* PlantsDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB1914E2174E734005E81F5 /* PlantsDetailTextCell.swift */; };
-		AFB1915C2174EE2B005E81F5 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191512174EE2A005E81F5 /* Rubik-Light.ttf */; };
-		AFB1915D2174EE2B005E81F5 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = AFB191522174EE2A005E81F5 /* OFL.txt */; };
-		AFB1915E2174EE2B005E81F5 /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191532174EE2A005E81F5 /* Rubik-BoldItalic.ttf */; };
-		AFB1915F2174EE2B005E81F5 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191542174EE2A005E81F5 /* Rubik-Medium.ttf */; };
-		AFB191602174EE2B005E81F5 /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191552174EE2A005E81F5 /* Rubik-MediumItalic.ttf */; };
-		AFB191612174EE2B005E81F5 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191562174EE2A005E81F5 /* Rubik-Bold.ttf */; };
-		AFB191622174EE2B005E81F5 /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191572174EE2A005E81F5 /* Rubik-LightItalic.ttf */; };
-		AFB191632174EE2B005E81F5 /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191582174EE2A005E81F5 /* Rubik-Black.ttf */; };
-		AFB191642174EE2B005E81F5 /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191592174EE2A005E81F5 /* Rubik-Italic.ttf */; };
-		AFB191652174EE2B005E81F5 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB1915A2174EE2B005E81F5 /* Rubik-Regular.ttf */; };
-		AFB191662174EE2B005E81F5 /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB1915B2174EE2B005E81F5 /* Rubik-BlackItalic.ttf */; };
+		AFB9BD9A21762F3300A5B78F /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = AFB191522174EE2A005E81F5 /* OFL.txt */; };
+		AFB9BD9B21762F3300A5B78F /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191582174EE2A005E81F5 /* Rubik-Black.ttf */; };
+		AFB9BD9C21762F3300A5B78F /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB1915B2174EE2B005E81F5 /* Rubik-BlackItalic.ttf */; };
+		AFB9BD9D21762F3300A5B78F /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191562174EE2A005E81F5 /* Rubik-Bold.ttf */; };
+		AFB9BD9E21762F3300A5B78F /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191532174EE2A005E81F5 /* Rubik-BoldItalic.ttf */; };
+		AFB9BD9F21762F3300A5B78F /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191592174EE2A005E81F5 /* Rubik-Italic.ttf */; };
+		AFB9BDA021762F3300A5B78F /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191512174EE2A005E81F5 /* Rubik-Light.ttf */; };
+		AFB9BDA121762F3300A5B78F /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191572174EE2A005E81F5 /* Rubik-LightItalic.ttf */; };
+		AFB9BDA221762F3300A5B78F /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191542174EE2A005E81F5 /* Rubik-Medium.ttf */; };
+		AFB9BDA321762F3300A5B78F /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191552174EE2A005E81F5 /* Rubik-MediumItalic.ttf */; };
+		AFB9BDA421762F3300A5B78F /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB1915A2174EE2B005E81F5 /* Rubik-Regular.ttf */; };
+		AFB9BDA721762F5E00A5B78F /* Plants.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFB9BDA521762F5E00A5B78F /* Plants.xcdatamodeld */; };
+		AFC23AB62191E6C300D6EE3B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AFC23AB52191E6C300D6EE3B /* libsqlite3.tbd */; };
+		AFC23AB82191E70A00D6EE3B /* SQLiteConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC23AB72191E70A00D6EE3B /* SQLiteConnect.swift */; };
 		AFCD75B821180B45002D13C1 /* PlantsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCD75B721180B45002D13C1 /* PlantsDetailViewController.swift */; };
+		AFD2573921A3F7C5000E7C33 /* setofont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFD2573721A3F7C5000E7C33 /* setofont.ttf */; };
+		AFD2573A21A3F7C5000E7C33 /* setofont-ex.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFD2573821A3F7C5000E7C33 /* setofont-ex.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AF31609221226477003A3730 /* Plants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plants.swift; sourceTree = "<group>"; };
+		AF4634B821A54010009DB054 /* ncnuplant.sqlite-wal.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ncnuplant.sqlite-wal.sqlite"; sourceTree = "<group>"; };
+		AF4634B921A54010009DB054 /* ncnuplant.sqlite */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ncnuplant.sqlite; sourceTree = "<group>"; };
+		AF4634BA21A54011009DB054 /* ncnuplant.sqlite-shm.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ncnuplant.sqlite-shm.sqlite"; sourceTree = "<group>"; };
 		AF70316A2175C13C00B0B11B /* PlantsDetailSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailSeparatorCell.swift; sourceTree = "<group>"; };
 		AF70316C2175C1BB00B0B11B /* PlantsDetailMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailMapCell.swift; sourceTree = "<group>"; };
 		AF70316E2175D52400B0B11B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +61,9 @@
 		AF90643C21176EAF00526161 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF906442211771C100526161 /* PlantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsTableViewController.swift; sourceTree = "<group>"; };
 		AF906444211771DF00526161 /* PlantsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsTableViewCell.swift; sourceTree = "<group>"; };
+		AFB0F27B2192887900337185 /* Plantslocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plantslocation.swift; sourceTree = "<group>"; };
+		AFB0F27D2192893C00337185 /* Datatag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datatag.swift; sourceTree = "<group>"; };
+		AFB0F28D2192D88800337185 /* mushin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = mushin.otf; sourceTree = "<group>"; };
 		AFB1914A2174DB48005E81F5 /* PlantsDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailHeaderView.swift; sourceTree = "<group>"; };
 		AFB1914C2174E09F005E81F5 /* PlantsDetailIconTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailIconTextCell.swift; sourceTree = "<group>"; };
 		AFB1914E2174E734005E81F5 /* PlantsDetailTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailTextCell.swift; sourceTree = "<group>"; };
@@ -61,7 +78,13 @@
 		AFB191592174EE2A005E81F5 /* Rubik-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Italic.ttf"; sourceTree = "<group>"; };
 		AFB1915A2174EE2B005E81F5 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		AFB1915B2174EE2B005E81F5 /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
+		AFB9BDA621762F5E00A5B78F /* Plants.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Plants.xcdatamodel; sourceTree = "<group>"; };
+		AFC23AB32191E6A200D6EE3B /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = "<group>"; };
+		AFC23AB52191E6C300D6EE3B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		AFC23AB72191E70A00D6EE3B /* SQLiteConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteConnect.swift; sourceTree = "<group>"; };
 		AFCD75B721180B45002D13C1 /* PlantsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailViewController.swift; sourceTree = "<group>"; };
+		AFD2573721A3F7C5000E7C33 /* setofont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = setofont.ttf; sourceTree = "<group>"; };
+		AFD2573821A3F7C5000E7C33 /* setofont-ex.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "setofont-ex.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFC23AB62191E6C300D6EE3B /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				AF31609221226477003A3730 /* Plants.swift */,
+				AFB0F27B2192887900337185 /* Plantslocation.swift */,
+				AFB0F27D2192893C00337185 /* Datatag.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -113,9 +139,9 @@
 		AF90642421176EAD00526161 = {
 			isa = PBXGroup;
 			children = (
-				AFB191502174EE0F005E81F5 /* Source */,
 				AF90642F21176EAD00526161 /* plants */,
 				AF90642E21176EAD00526161 /* Products */,
+				AFC23AB42191E6C300D6EE3B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,16 +156,33 @@
 		AF90642F21176EAD00526161 /* plants */ = {
 			isa = PBXGroup;
 			children = (
-				AFB191492174D9CE005E81F5 /* View */,
+				AF4634B921A54010009DB054 /* ncnuplant.sqlite */,
+				AF4634BA21A54011009DB054 /* ncnuplant.sqlite-shm.sqlite */,
+				AF4634B821A54010009DB054 /* ncnuplant.sqlite-wal.sqlite */,
+				AFB0F28C2192D87A00337185 /* Souce3 */,
+				AFD2573621A3F7C5000E7C33 /* Source2 */,
+				AFB191502174EE0F005E81F5 /* Source */,
 				AF31609621226C80003A3730 /* storyboard */,
 				AF31609821226CAF003A3730 /* Model */,
+				AFB191492174D9CE005E81F5 /* View */,
 				AF31609521226C46003A3730 /* Controller */,
 				AF31609721226CA2003A3730 /* cell */,
 				AF90643021176EAD00526161 /* AppDelegate.swift */,
 				AF90643721176EAF00526161 /* Assets.xcassets */,
 				AF90643C21176EAF00526161 /* Info.plist */,
+				AFB9BDA521762F5E00A5B78F /* Plants.xcdatamodeld */,
+				AFC23AB32191E6A200D6EE3B /* BridgeHeader.h */,
+				AFC23AB72191E70A00D6EE3B /* SQLiteConnect.swift */,
 			);
 			path = plants;
+			sourceTree = "<group>";
+		};
+		AFB0F28C2192D87A00337185 /* Souce3 */ = {
+			isa = PBXGroup;
+			children = (
+				AFB0F28D2192D88800337185 /* mushin.otf */,
+			);
+			path = Souce3;
 			sourceTree = "<group>";
 		};
 		AFB191492174D9CE005E81F5 /* View */ = {
@@ -170,6 +213,23 @@
 				AFB1915A2174EE2B005E81F5 /* Rubik-Regular.ttf */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		AFC23AB42191E6C300D6EE3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AFC23AB52191E6C300D6EE3B /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AFD2573621A3F7C5000E7C33 /* Source2 */ = {
+			isa = PBXGroup;
+			children = (
+				AFD2573721A3F7C5000E7C33 /* setofont.ttf */,
+				AFD2573821A3F7C5000E7C33 /* setofont-ex.ttf */,
+			);
+			path = Source2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,20 +290,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFB1915D2174EE2B005E81F5 /* OFL.txt in Resources */,
-				AFB191622174EE2B005E81F5 /* Rubik-LightItalic.ttf in Resources */,
-				AFB191612174EE2B005E81F5 /* Rubik-Bold.ttf in Resources */,
-				AFB191632174EE2B005E81F5 /* Rubik-Black.ttf in Resources */,
-				AFB191662174EE2B005E81F5 /* Rubik-BlackItalic.ttf in Resources */,
-				AFB1915E2174EE2B005E81F5 /* Rubik-BoldItalic.ttf in Resources */,
 				AF90643B21176EAF00526161 /* LaunchScreen.storyboard in Resources */,
-				AFB191602174EE2B005E81F5 /* Rubik-MediumItalic.ttf in Resources */,
-				AFB1915C2174EE2B005E81F5 /* Rubik-Light.ttf in Resources */,
-				AFB191642174EE2B005E81F5 /* Rubik-Italic.ttf in Resources */,
+				AFB9BDA421762F3300A5B78F /* Rubik-Regular.ttf in Resources */,
+				AFB9BD9E21762F3300A5B78F /* Rubik-BoldItalic.ttf in Resources */,
+				AF4634BB21A54011009DB054 /* ncnuplant.sqlite-wal.sqlite in Resources */,
 				AF90643821176EAF00526161 /* Assets.xcassets in Resources */,
-				AFB191652174EE2B005E81F5 /* Rubik-Regular.ttf in Resources */,
+				AFB9BDA221762F3300A5B78F /* Rubik-Medium.ttf in Resources */,
+				AFB9BDA121762F3300A5B78F /* Rubik-LightItalic.ttf in Resources */,
+				AFB9BD9C21762F3300A5B78F /* Rubik-BlackItalic.ttf in Resources */,
+				AFB9BD9A21762F3300A5B78F /* OFL.txt in Resources */,
+				AFB9BD9F21762F3300A5B78F /* Rubik-Italic.ttf in Resources */,
+				AFB0F28F2192D88800337185 /* mushin.otf in Resources */,
+				AFD2573921A3F7C5000E7C33 /* setofont.ttf in Resources */,
+				AF4634BC21A54011009DB054 /* ncnuplant.sqlite in Resources */,
+				AFB9BD9D21762F3300A5B78F /* Rubik-Bold.ttf in Resources */,
+				AFD2573A21A3F7C5000E7C33 /* setofont-ex.ttf in Resources */,
+				AFB9BDA321762F3300A5B78F /* Rubik-MediumItalic.ttf in Resources */,
+				AFB9BDA021762F3300A5B78F /* Rubik-Light.ttf in Resources */,
+				AFB9BD9B21762F3300A5B78F /* Rubik-Black.ttf in Resources */,
 				AF90643621176EAD00526161 /* Main.storyboard in Resources */,
-				AFB1915F2174EE2B005E81F5 /* Rubik-Medium.ttf in Resources */,
+				AF4634BD21A54011009DB054 /* ncnuplant.sqlite-shm.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +321,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF70316F2175D52400B0B11B /* MapViewController.swift in Sources */,
+				AFB9BDA721762F5E00A5B78F /* Plants.xcdatamodeld in Sources */,
+				AFB0F27C2192887900337185 /* Plantslocation.swift in Sources */,
 				AF31609321226477003A3730 /* Plants.swift in Sources */,
 				AF90643121176EAD00526161 /* AppDelegate.swift in Sources */,
 				AF906445211771DF00526161 /* PlantsTableViewCell.swift in Sources */,
@@ -264,6 +332,8 @@
 				AFB1914D2174E09F005E81F5 /* PlantsDetailIconTextCell.swift in Sources */,
 				AFB1914B2174DB48005E81F5 /* PlantsDetailHeaderView.swift in Sources */,
 				AF906443211771C100526161 /* PlantsTableViewController.swift in Sources */,
+				AFB0F27E2192893C00337185 /* Datatag.swift in Sources */,
+				AFC23AB82191E70A00D6EE3B /* SQLiteConnect.swift in Sources */,
 				AFB1914F2174E734005E81F5 /* PlantsDetailTextCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,12 +481,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XW9B7MQLBU;
 				INFOPLIST_FILE = plants/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = viplab.plants;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = plants/BridgeHeader.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -429,12 +501,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XW9B7MQLBU;
 				INFOPLIST_FILE = plants/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = viplab.plants;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = plants/BridgeHeader.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -462,6 +536,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AFB9BDA521762F5E00A5B78F /* Plants.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AFB9BDA621762F5E00A5B78F /* Plants.xcdatamodel */,
+			);
+			currentVersion = AFB9BDA621762F5E00A5B78F /* Plants.xcdatamodel */;
+			path = Plants.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AF90642521176EAD00526161 /* Project object */;
 }

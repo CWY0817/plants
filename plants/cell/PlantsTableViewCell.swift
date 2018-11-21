@@ -11,8 +11,8 @@ import UIKit
 class PlantsTableViewCell: UITableViewCell {
     
     @IBOutlet var nameLabel : UILabel!
-    @IBOutlet var locationLabel : UILabel!
-    @IBOutlet var typeLabel : UILabel!
+    @IBOutlet var familiaLabel : UILabel!
+    @IBOutlet var snameLabel : UILabel!
     @IBOutlet var plantsimage : UIImageView! {
         didSet {
             plantsimage.layer.cornerRadius = plantsimage.bounds.width/2

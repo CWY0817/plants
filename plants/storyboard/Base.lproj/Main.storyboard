@@ -9,8 +9,13 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="mushin.otf">
+            <string>Mushin</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--暨大植物小圖鑑-->
+        <!--暨大植物圖鑑-->
         <scene sceneID="Gtx-0V-VEx">
             <objects>
                 <tableViewController id="Tgt-rU-acf" customClass="PlantsTableViewController" customModule="plants" customModuleProvider="target" sceneMemberID="viewController">
@@ -44,7 +49,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="hWh-Ao-9B3">
-                                                    <rect key="frame" x="75" y="0.0" width="74" height="58.333333333333336"/>
+                                                    <rect key="frame" x="75" y="0.0" width="74" height="56.333333333333336"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rS-46-s09">
                                                             <rect key="frame" x="0.0" y="0.0" width="34.666666666666664" height="20.333333333333332"/>
@@ -52,15 +57,15 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="位置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egt-oj-OLc">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="學名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egt-oj-OLc">
                                                             <rect key="frame" x="0.0" y="21.333333333333332" width="30.666666666666668" height="17.999999999999996"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="特徵" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KzD-nO-LAF">
-                                                            <rect key="frame" x="0.0" y="40.333333333333336" width="30.666666666666668" height="18"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="科屬種" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="KzD-nO-LAF">
+                                                            <rect key="frame" x="0.0" y="40.333333333333336" width="40.666666666666664" height="16"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13.5"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -80,11 +85,11 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="familiaLabel" destination="Egt-oj-OLc" id="BSx-5o-AGj"/>
                                     <outlet property="heartIcon" destination="AUT-UN-dbr" id="cke-zd-jbJ"/>
-                                    <outlet property="locationLabel" destination="Egt-oj-OLc" id="aRI-1y-7g2"/>
                                     <outlet property="nameLabel" destination="4rS-46-s09" id="5B4-1w-3ud"/>
                                     <outlet property="plantsimage" destination="wmV-PZ-iNx" id="qtz-US-alg"/>
-                                    <outlet property="typeLabel" destination="KzD-nO-LAF" id="Jzg-cp-pd8"/>
+                                    <outlet property="snameLabel" destination="KzD-nO-LAF" id="x9O-GO-Qgw"/>
                                     <segue destination="RAQ-0E-uh2" kind="show" identifier="showplantsdetail" id="Zdf-TM-cHM"/>
                                 </connections>
                             </tableViewCell>
@@ -94,7 +99,7 @@
                             <outlet property="delegate" destination="Tgt-rU-acf" id="BH4-df-TXt"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="暨大植物小圖鑑" id="33y-4w-m0R"/>
+                    <navigationItem key="navigationItem" title="暨大植物圖鑑" id="33y-4w-m0R"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KkH-P6-K4i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -141,8 +146,8 @@
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcE-Uf-1Y3" userLabel="NAME">
-                                            <rect key="frame" x="14" y="276" width="98.666666666666671" height="54"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="35"/>
+                                            <rect key="frame" x="14" y="276" width="70" height="54"/>
+                                            <fontDescription key="fontDescription" name="Mushin" family="Mushin" pointSize="35"/>
                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -202,8 +207,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="familiatext" destination="f3a-v5-Md3" id="YUt-fW-Nm0"/>
                                             <outlet property="iconimageview" destination="cSL-cl-MhT" id="ehl-96-EKh"/>
-                                            <outlet property="locationtext" destination="f3a-v5-Md3" id="GNb-F1-iE4"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlantsDetailTextCell" rowHeight="60" id="T3L-Jk-7CO" customClass="PlantsDetailTextCell" customModule="plants" customModuleProvider="target">
@@ -224,8 +229,8 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPg-tB-pLB" userLabel="typetext">
-                                                            <rect key="frame" x="40" y="9" width="346" height="30"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                            <rect key="frame" x="40" y="12" width="346" height="24"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -241,7 +246,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="iconImageView" destination="vwx-GZ-xzd" id="Pfz-PD-Of0"/>
-                                            <outlet property="typetext" destination="PPg-tB-pLB" id="K3i-pk-d3e"/>
+                                            <outlet property="othernametext" destination="PPg-tB-pLB" id="7ut-oD-Shk"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlantsDetailSeparatorCell" rowHeight="40" id="qxL-hf-tNB" customClass="PlantsDetailSeparatorCell" customModule="plants" customModuleProvider="target">

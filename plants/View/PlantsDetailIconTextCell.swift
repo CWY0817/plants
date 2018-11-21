@@ -12,9 +12,9 @@ class PlantsDetailIconTextCell: UITableViewCell {
     
     
     @IBOutlet var iconimageview:UIImageView!
-    @IBOutlet var locationtext:UILabel!{
+    @IBOutlet var familiatext :UILabel!{
         didSet{
-            locationtext.numberOfLines=0
+            familiatext.numberOfLines=0
         }
     }
 

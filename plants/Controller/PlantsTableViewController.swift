@@ -10,13 +10,100 @@ import UIKit
 
 class PlantsTableViewController: UITableViewController {
     
+    var db : SQLiteConnect?
+    
+    // MARK: - 植物class陣列
+    var plants:[Plants] = []
+    var plantslocation:[Plantslocation] = []
+    var plantsdata:[Plantsdata] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        //導覽列
+    navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default )
         navigationController?.navigationBar.shadowImage = UIImage()
-        if let customFont = UIFont(name:"Rubik-Medium",size:40.0){
-            navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.foregroundColor : UIColor(red: 231.0/255.0 , green : 76.0/255.0 , blue: 60.0/255.0 , alpha: 1.0),NSAttributedStringKey.font: customFont ]
+        
+        // MARK: - 資料庫
+        // 資料庫檔案的路徑
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let sqlitePath = urls[urls.count-1].absoluteString + "ncnuplant.sqlite"
+        
+        // 印出儲存檔案的位置
+        print(sqlitePath)
+        
+        // SQLite 資料庫
+        db = SQLiteConnect(path: sqlitePath)
+        
+        if let mydb = db {
+            
+            let statement = mydb.fetch("plantdata", cond: "1 == 1", order: nil)
+            let statement1 = mydb.fetch("plantLocation_db", cond: "1 == 1", order: nil)
+            let statement2 = mydb.fetch("datatag", cond: "1 == 1", order: nil)
+            while sqlite3_step(statement) == SQLITE_ROW{
+                let pid = sqlite3_column_int(statement, 0)
+                let cname = String(cString: sqlite3_column_text(statement, 1))
+                let sname = String(cString: sqlite3_column_text(statement, 2))
+                let othername = String(cString: sqlite3_column_text(statement, 3))
+                let familia = String(cString: sqlite3_column_text(statement, 4))
+                let originplace = String(cString: sqlite3_column_text(statement, 5))
+                let distribution = String(cString: sqlite3_column_text(statement, 6))
+                let application = String(cString: sqlite3_column_text(statement, 7))
+                let leaf = String(cString: sqlite3_column_text(statement, 8))
+                let stem = String(cString: sqlite3_column_text(statement, 9))
+                let flower = String(cString: sqlite3_column_text(statement, 10))
+                let fruit = String(cString: sqlite3_column_text(statement, 11))
+                let startmonth = sqlite3_column_int(statement, 12)
+                let endmonth = sqlite3_column_int(statement, 13)
+                let tmp = Plants(Pid: pid, Cname: cname, Sname: sname, Othername: othername, Familia: familia, Originplace: originplace, Distribution: distribution, Application: application, Leaf: leaf, Stem: stem, Flower: flower, Fruit: fruit, Startmonth: startmonth, Endmonth: endmonth, Isee: false)
+                plants.append(tmp)
+            }
+            
+            
+            while sqlite3_step(statement1) == SQLITE_ROW{
+                let pid = sqlite3_column_int(statement1, 0)
+                let latitude = sqlite3_column_double(statement1, 1)
+                let longitude = sqlite3_column_double(statement1, 2)
+                let tmp = Plantslocation(Pid: pid,Latitude: latitude, Longitude: longitude )
+                plantslocation.append(tmp)
+            }
+            while sqlite3_step(statement2) == SQLITE_ROW{
+                let pid = sqlite3_column_int(statement2, 0)
+                let twotofive = sqlite3_column_int(statement2, 1)
+                let fivetoseven = sqlite3_column_int(statement2, 2)
+                let eighttoten = sqlite3_column_int(statement2, 3)
+                let eleventoone = sqlite3_column_int(statement2, 4)
+                let white = sqlite3_column_int(statement2, 5)
+                let red = sqlite3_column_int(statement2, 6)
+                let orange = sqlite3_column_int(statement2, 7)
+                let yellow = sqlite3_column_int(statement2, 8)
+                let green = sqlite3_column_int(statement2, 9)
+                let blue = sqlite3_column_int(statement2, 10)
+                let purple = sqlite3_column_int(statement2, 11)
+                let brown = sqlite3_column_int(statement2, 12)
+                let other = sqlite3_column_int(statement2, 13)
+                let regular = sqlite3_column_int(statement2, 14)
+                let irregular = sqlite3_column_int(statement2, 15)
+                let composite = sqlite3_column_int(statement2, 16)
+                let three = sqlite3_column_int(statement2, 17)
+                let four = sqlite3_column_int(statement2, 18)
+                let five = sqlite3_column_int(statement2, 19)
+                let six = sqlite3_column_int(statement, 20)
+                let seven = sqlite3_column_int(statement2, 21)
+                let altermate = sqlite3_column_int(statement2, 22)
+                let opposite = sqlite3_column_int(statement2, 23)
+                let whorled = sqlite3_column_int(statement2, 24)
+                let fasciculate = sqlite3_column_int(statement2, 25)
+                let simpleleaf = sqlite3_column_int(statement2, 26)
+                let compoudleaf = sqlite3_column_int(statement2, 27)
+                let aclularleaf = sqlite3_column_int(statement2, 28)
+                let tmp = Plantsdata(Pid: pid, twotofive: twotofive, fivetoseven: fivetoseven, eighttoten: eighttoten, eleventoone: eleventoone, white: white, red: red, orange: orange, yellow: yellow, green: green, blue: blue, purple: purple, brown: brown, other: other, regular: regular, irregular: irregular, composite: composite, three: three, four: four, five: five, six: six, seven: seven, altermate: altermate, opposite: opposite, whorled: whorled, fasciculate: fasciculate, simpleleaf: simpleleaf, compoudleaf: compoudleaf, aclularleaf: aclularleaf)
+                plantsdata.append(tmp)
+                
+                
+            }
+            
         }
     }
     
@@ -31,27 +118,7 @@ class PlantsTableViewController: UITableViewController {
     }
 
     
-    // MARK: - 植物class陣列
-    var plants:[Plants]=[
-        Plants(name:"南天竹", type:"葉為三回羽狀複葉" , location:"圖書館前",map:"台灣南投縣埔里鎮大學路500號",isee: false),
-        Plants(name:"海桐", type:"葉簇生枝端,呈倒卵形" , location:"管院步道旁",map:"台灣南投縣埔里鎮大學路470號管理學院",isee: false),
-        Plants(name:"石栗", type:"葉脈明顯,有明顯星狀毛" ,location:"香楠步道旁",map:"台灣南投縣埔里鎮香楠步道",isee: false),
-        Plants(name:"五掌楠", type:"葉輪生,離基三出脈" , location:"行政大樓旁",map:"台灣南投縣埔里鎮大學路1號行政大樓",isee: false),
-        Plants(name:"楓香", type:"葉多為三裂" , location:"行政大樓旁",map:"台灣南投縣埔里鎮大學路1號行政大樓", isee: false),
-        Plants(name:"黃花風鈴木", type:"掌狀複葉,葉形略呈倒卵形" , location:"科院前主環道內草皮" ,map:"台灣南投縣埔里鎮大學路301號", isee: false),
-        Plants(name:"烏皮九芎", type:"葉脈有毛" , location:"機車道警衛室旁" ,map:"台灣南投縣埔里鎮桃米路28號", isee: false),
-        Plants(name:"芒果", type:"圓錐花序,葉脈明顯" , location:"管院旁",map:"台灣南投縣埔里鎮大學路470號管理學院" , isee: false),
-        Plants(name:"鐵冬青", type:"花梗無毛,葉光滑" , location:"科院外環道" ,map:"台灣南投縣埔里鎮大學路301號", isee: false),
-        Plants(name:"風鈴木", type:"掌狀複葉,有鋸齒緣" , location:"暨大7-11後" ,map:"台灣南投縣埔里鎮大學路501號", isee: false),
-        Plants(name:"黃鵪菜", type:"根生葉,羽狀深裂" , location:"人文學院" ,map:"台灣南投縣埔里鎮大學路480號",  isee: false),
-        Plants(name:"江某", type:"幼樹上的小葉會不規則裂且為掌狀複葉" , location:"機車道",map:"台灣南投縣桃米路28號" , isee: false),
-        Plants(name:"台灣赤楠", type:"葉對生,葉背紋路細緻明顯" , location:"暨大7-11前",map:"台灣南投縣埔里鎮大學路501號" , isee: false),
-        Plants(name:"桂花", type:"葉全緣或細鋸齒" , location:"暨大7-11旁" ,map:"台灣南投縣埔里鎮大學路501號", isee: false),
-        Plants(name:"奧氏虎皮楠", type:"莖直立或斜上" , location:"行政大樓停車場旁草地" ,map:"台灣南投縣埔里鎮大學路1號行政大樓",  isee: false),
-        Plants(name:"欖仁樹", type:"花雄蕊十枚,內外兩圈各五枚" , location:"綜合大樓停車場旁",map:"台灣南投縣埔里鎮大學路490號", isee: false),
-        Plants(name:"台灣海桐", type:"葉搓揉會有特殊香味" , location:"科一停車場" ,map:"台灣南投縣埔里鎮大學路301號", isee: false),
-        Plants(name:"九芎", type:"光滑的樹幹" , location:"機車道" ,map:"台灣南投縣桃米路28號", isee: false)
-    ]
+    
 
     
     // MARK: - Table view data source
@@ -72,11 +139,12 @@ class PlantsTableViewController: UITableViewController {
         let cellidentifier = "Cell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellidentifier, for: indexPath)as! PlantsTableViewCell
 
-        cell.nameLabel.text = plants[indexPath.row].name
-        cell.locationLabel.text = "位置: " + plants[indexPath.row].location
-        cell.typeLabel.text = "特徵: " + plants[indexPath.row].type
-        cell.plantsimage.image = UIImage(named: plants[indexPath.row].name)
-        cell.heartIcon.isHidden = plants[indexPath.row].isee ? false : true
+        
+        cell.nameLabel.text = plants[indexPath.row].Cname
+        cell.familiaLabel.text = "學名: " + plants[indexPath.row].Familia
+        cell.snameLabel.text = "科屬: " + plants[indexPath.row].Sname
+        cell.plantsimage.image = UIImage(named: plants[indexPath.row].Cname)
+        cell.heartIcon.isHidden = plants[indexPath.row].Isee ? false : true
 
         return cell
     }
@@ -102,7 +170,7 @@ class PlantsTableViewController: UITableViewController {
             let sharetext = "去看看這植物吧🌳"
             
             let activityController : UIActivityViewController
-            if let shareimage = UIImage(named: self.plants[indexPath.row].name){
+            if let shareimage = UIImage(named: self.plants[indexPath.row].Cname){
                 activityController = UIActivityViewController(activityItems: [shareimage,sharetext], applicationActivities: nil)
             }
             else{
@@ -123,13 +191,13 @@ class PlantsTableViewController: UITableViewController {
         shareAction.image = UIImage(named: "share")
         
         //check
-        let title2 = plants[indexPath.row].isee ? "Undo Check" : "Check"
-        let booling2 = plants[indexPath.row].isee ? false : true
+        let title2 = plants[indexPath.row].Isee ? "Undo Check" : "Check"
+        let booling2 = plants[indexPath.row].Isee ? false : true
         
         let checkAction2 = UIContextualAction(style:.normal,title:title2){(action,sourceView,completionHandler) in
             let cell = tableView.cellForRow(at: indexPath)as!PlantsTableViewCell
             cell.heartIcon.isHidden = booling2 ? false : true
-            self.plants[indexPath.row].isee = booling2
+            self.plants[indexPath.row].Isee = booling2
             completionHandler(true)
         }
         let img = booling2 ? "tick" : "undo"
@@ -148,6 +216,7 @@ class PlantsTableViewController: UITableViewController {
             if let indexPath = tableView.indexPathForSelectedRow{
                 let destination = segue.destination as!PlantsDetailViewController
                 destination.plants = plants[indexPath.row]
+                destination.plantslocation = plantslocation[indexPath.row]
             }
         }
         
