@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF31609321226477003A3730 /* Plants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF31609221226477003A3730 /* Plants.swift */; };
-		AF4634BB21A54011009DB054 /* ncnuplant.sqlite-wal.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AF4634B821A54010009DB054 /* ncnuplant.sqlite-wal.sqlite */; };
 		AF4634BC21A54011009DB054 /* ncnuplant.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AF4634B921A54010009DB054 /* ncnuplant.sqlite */; };
-		AF4634BD21A54011009DB054 /* ncnuplant.sqlite-shm.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AF4634BA21A54011009DB054 /* ncnuplant.sqlite-shm.sqlite */; };
 		AF70316B2175C13C00B0B11B /* PlantsDetailSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF70316A2175C13C00B0B11B /* PlantsDetailSeparatorCell.swift */; };
 		AF70316D2175C1BB00B0B11B /* PlantsDetailMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF70316C2175C1BB00B0B11B /* PlantsDetailMapCell.swift */; };
 		AF70316F2175D52400B0B11B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF70316E2175D52400B0B11B /* MapViewController.swift */; };
@@ -47,9 +45,7 @@
 
 /* Begin PBXFileReference section */
 		AF31609221226477003A3730 /* Plants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plants.swift; sourceTree = "<group>"; };
-		AF4634B821A54010009DB054 /* ncnuplant.sqlite-wal.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ncnuplant.sqlite-wal.sqlite"; sourceTree = "<group>"; };
 		AF4634B921A54010009DB054 /* ncnuplant.sqlite */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ncnuplant.sqlite; sourceTree = "<group>"; };
-		AF4634BA21A54011009DB054 /* ncnuplant.sqlite-shm.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ncnuplant.sqlite-shm.sqlite"; sourceTree = "<group>"; };
 		AF70316A2175C13C00B0B11B /* PlantsDetailSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailSeparatorCell.swift; sourceTree = "<group>"; };
 		AF70316C2175C1BB00B0B11B /* PlantsDetailMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailMapCell.swift; sourceTree = "<group>"; };
 		AF70316E2175D52400B0B11B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -157,8 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				AF4634B921A54010009DB054 /* ncnuplant.sqlite */,
-				AF4634BA21A54011009DB054 /* ncnuplant.sqlite-shm.sqlite */,
-				AF4634B821A54010009DB054 /* ncnuplant.sqlite-wal.sqlite */,
 				AFB0F28C2192D87A00337185 /* Souce3 */,
 				AFD2573621A3F7C5000E7C33 /* Source2 */,
 				AFB191502174EE0F005E81F5 /* Source */,
@@ -293,7 +287,6 @@
 				AF90643B21176EAF00526161 /* LaunchScreen.storyboard in Resources */,
 				AFB9BDA421762F3300A5B78F /* Rubik-Regular.ttf in Resources */,
 				AFB9BD9E21762F3300A5B78F /* Rubik-BoldItalic.ttf in Resources */,
-				AF4634BB21A54011009DB054 /* ncnuplant.sqlite-wal.sqlite in Resources */,
 				AF90643821176EAF00526161 /* Assets.xcassets in Resources */,
 				AFB9BDA221762F3300A5B78F /* Rubik-Medium.ttf in Resources */,
 				AFB9BDA121762F3300A5B78F /* Rubik-LightItalic.ttf in Resources */,
@@ -309,7 +302,6 @@
 				AFB9BDA021762F3300A5B78F /* Rubik-Light.ttf in Resources */,
 				AFB9BD9B21762F3300A5B78F /* Rubik-Black.ttf in Resources */,
 				AF90643621176EAD00526161 /* Main.storyboard in Resources */,
-				AF4634BD21A54011009DB054 /* ncnuplant.sqlite-shm.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

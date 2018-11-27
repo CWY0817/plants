@@ -11,36 +11,19 @@ import MapKit
 
 class PlantsDetailMapCell: UITableViewCell {
     
-    
     @IBOutlet var mapview : MKMapView!
     
-    func configure(location:String){
-        //取得位置
-        let geoCoder = CLGeocoder()
+    func configure(plantsCname:String,plantsSname:String,plantsPid:Int32 ,plantslocationPid:Int32 ,latitude:Double,longitude:Double){
+        let objectAnnotation = MKPointAnnotation()
+        if plantsPid == plantslocationPid{
+            objectAnnotation.coordinate = CLLocation(latitude: latitude, longitude: longitude).coordinate
+            objectAnnotation.title = plantsCname
+            objectAnnotation.subtitle = plantsSname
+            mapview.addAnnotation(objectAnnotation)
+            let region = MKCoordinateRegionMakeWithDistance(objectAnnotation.coordinate, 250, 250)
+            mapview.setRegion(region, animated: false)
+        }
         
-        print(location)
-        geoCoder.geocodeAddressString(location,completionHandler: { placemarks, error in
-            if let error = error{
-                print(error.localizedDescription)
-                return
-            }
-            if let placemarks = placemarks{
-                //取得第一個標記
-                let placemark = placemarks[0]
-                //加上標記
-                let annotation = MKPointAnnotation()
-                
-                if let location = placemark.location{
-                    //顯示標記
-                    annotation.coordinate = location.coordinate
-                    self.mapview.addAnnotation(annotation)
-                    
-                    //設定縮放程度
-                    let region = MKCoordinateRegionMakeWithDistance(annotation.coordinate,250,250)
-                    self.mapview.setRegion(region, animated: false)
-                }
-            }
-        })
     }
 
     override func awakeFromNib() {

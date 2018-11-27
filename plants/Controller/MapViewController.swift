@@ -27,13 +27,15 @@ class MapViewController: UIViewController,MKMapViewDelegate {
         objectAnnotation.coordinate = CLLocation(latitude: plantslocation.Latitude, longitude: plantslocation.Longitude).coordinate
         objectAnnotation.title = plants.Cname
         objectAnnotation.subtitle = plants.Sname
-            mapView.addAnnotation(objectAnnotation)}
+        mapView.addAnnotation(objectAnnotation)
+        let region = MKCoordinateRegionMakeWithDistance(objectAnnotation.coordinate, 250, 250)
+        mapView.setRegion(region, animated: false)
+        }
         
-        
+            
         mapView.showsCompass = true
         mapView.showsScale = true
         mapView.showsTraffic = true
-        // Do any additional setup after loading the view.
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {

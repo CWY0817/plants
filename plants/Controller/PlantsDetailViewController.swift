@@ -128,7 +128,7 @@ class PlantsDetailViewController: UIViewController,UITableViewDataSource,UITable
             return cell
         case 11:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PlantsDetailMapCell.self), for: indexPath) as! PlantsDetailMapCell
-            cell.configure(location: "台灣國立暨南國際大學" )
+            cell.configure(plantsCname:plants.Cname,plantsSname:plants.Sname,plantsPid:plants.Pid ,plantslocationPid:plantslocation.Pid ,latitude:plantslocation.Latitude , longitude:plantslocation.Longitude )
             return cell
         default:
             fatalError("Failed to instantiate the table view cell for detail view controller")
