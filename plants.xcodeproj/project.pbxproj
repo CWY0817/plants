@@ -23,7 +23,7 @@
 		AFB1914B2174DB48005E81F5 /* PlantsDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB1914A2174DB48005E81F5 /* PlantsDetailHeaderView.swift */; };
 		AFB1914D2174E09F005E81F5 /* PlantsDetailIconTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB1914C2174E09F005E81F5 /* PlantsDetailIconTextCell.swift */; };
 		AFB1914F2174E734005E81F5 /* PlantsDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB1914E2174E734005E81F5 /* PlantsDetailTextCell.swift */; };
-		AFB1E87121B7798600361DB5 /* ncnuplant.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AFB1E87021B7798600361DB5 /* ncnuplant.sqlite */; };
+		AFB1E87521B7807B00361DB5 /* ncnuplant.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AFB1E87421B7807B00361DB5 /* ncnuplant.sqlite */; };
 		AFB9BD9A21762F3300A5B78F /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = AFB191522174EE2A005E81F5 /* OFL.txt */; };
 		AFB9BD9B21762F3300A5B78F /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB191582174EE2A005E81F5 /* Rubik-Black.ttf */; };
 		AFB9BD9C21762F3300A5B78F /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFB1915B2174EE2B005E81F5 /* Rubik-BlackItalic.ttf */; };
@@ -73,7 +73,7 @@
 		AFB191592174EE2A005E81F5 /* Rubik-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Italic.ttf"; sourceTree = "<group>"; };
 		AFB1915A2174EE2B005E81F5 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		AFB1915B2174EE2B005E81F5 /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
-		AFB1E87021B7798600361DB5 /* ncnuplant.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = ncnuplant.sqlite; path = ../../ncnuplant.sqlite; sourceTree = "<group>"; };
+		AFB1E87421B7807B00361DB5 /* ncnuplant.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = ncnuplant.sqlite; sourceTree = "<group>"; };
 		AFB9BDA621762F5E00A5B78F /* Plants.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Plants.xcdatamodel; sourceTree = "<group>"; };
 		AFC23AB32191E6A200D6EE3B /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = "<group>"; };
 		AFC23AB52191E6C300D6EE3B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -152,7 +152,7 @@
 		AF90642F21176EAD00526161 /* plants */ = {
 			isa = PBXGroup;
 			children = (
-				AFB1E87021B7798600361DB5 /* ncnuplant.sqlite */,
+				AFB1E87421B7807B00361DB5 /* ncnuplant.sqlite */,
 				AFB0F28C2192D87A00337185 /* Souce3 */,
 				AFD2573621A3F7C5000E7C33 /* Source2 */,
 				AFB191502174EE0F005E81F5 /* Source */,
@@ -295,11 +295,11 @@
 				AFB9BD9F21762F3300A5B78F /* Rubik-Italic.ttf in Resources */,
 				AFB0F28F2192D88800337185 /* mushin.otf in Resources */,
 				AFD2573921A3F7C5000E7C33 /* setofont.ttf in Resources */,
-				AFB1E87121B7798600361DB5 /* ncnuplant.sqlite in Resources */,
 				AFB9BD9D21762F3300A5B78F /* Rubik-Bold.ttf in Resources */,
 				AFD2573A21A3F7C5000E7C33 /* setofont-ex.ttf in Resources */,
 				AFB9BDA321762F3300A5B78F /* Rubik-MediumItalic.ttf in Resources */,
 				AFB9BDA021762F3300A5B78F /* Rubik-Light.ttf in Resources */,
+				AFB1E87521B7807B00361DB5 /* ncnuplant.sqlite in Resources */,
 				AFB9BD9B21762F3300A5B78F /* Rubik-Black.ttf in Resources */,
 				AF90643621176EAD00526161 /* Main.storyboard in Resources */,
 			);
