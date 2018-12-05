@@ -47,11 +47,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     lazy var persistentContainer: NSPersistentContainer = {
         
-        
         let directoryUrls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let applicationDocumentDirectory = directoryUrls[0]
         let storeUrl = applicationDocumentDirectory.appendingPathComponent("ncnuplant.sqlite")
-        
         let container = NSPersistentContainer(name: "plants")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {

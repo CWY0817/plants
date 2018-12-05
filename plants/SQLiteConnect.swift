@@ -39,7 +39,9 @@ class SQLiteConnect {
         let sql = "create table if not exists \(tableName) "
             + "(\(columnsInfo.joined(separator: ",")))"
         
-        if sqlite3_exec(self.db, sql.cString(using: String.Encoding.utf8), nil, nil, nil) == SQLITE_OK{
+        if sqlite3_exec(
+            self.db, sql.cString(using: String.Encoding.utf8), nil, nil, nil)
+            == SQLITE_OK{
             return true
         }
         
@@ -53,7 +55,9 @@ class SQLiteConnect {
             + "(\(rowInfo.keys.joined(separator: ","))) "
             + "values (\(rowInfo.values.joined(separator: ",")))"
         
-        if sqlite3_prepare_v2(self.db, sql.cString(using: String.Encoding.utf8), -1, &statement, nil) == SQLITE_OK {
+        if sqlite3_prepare_v2(
+            self.db, sql.cString(using: String.Encoding.utf8), -1, &statement, nil)
+            == SQLITE_OK {
             if sqlite3_step(statement) == SQLITE_DONE {
                 return true
             }
@@ -64,27 +68,28 @@ class SQLiteConnect {
     }
     
     // 讀取資料
-    func fetch(_ tableName :String, cond :String?, order :String?) -> OpaquePointer{
-        var statement :OpaquePointer? = nil
-        var sql = "select * from \(tableName)"
-        if let condition = cond {
-            sql += " where \(condition)"
-        }
-        
-        if let orderBy = order {
-            sql += " order by \(orderBy)"
-        }
-        
-        sqlite3_prepare_v2(self.db, sql.cString(using: String.Encoding.utf8), -1, &statement, nil)
-        if statement == nil {
-            print("statement is nil\n")
-        }
-        return statement!
-        
+    func fetch(
+        _ tableName :String, cond :String?, order :String?)
+        -> OpaquePointer {
+            var statement :OpaquePointer? = nil
+            var sql = "select * from \(tableName)"
+            if let condition = cond {
+                sql += " where \(condition)"
+            }
+            
+            if let orderBy = order {
+                sql += " order by \(orderBy)"
+            }
+            
+            sqlite3_prepare_v2(
+                self.db, sql.cString(using: String.Encoding.utf8), -1, &statement, nil)
+            
+            return statement!
     }
     
     // 更新資料
-    func update(_ tableName :String, cond :String?, rowInfo :[String:String]) -> Bool {
+    func update(
+        _ tableName :String, cond :String?, rowInfo :[String:String]) -> Bool {
         var statement :OpaquePointer? = nil
         var sql = "update \(tableName) set "
         
@@ -100,7 +105,9 @@ class SQLiteConnect {
             sql += " where \(condition)"
         }
         
-        if sqlite3_prepare_v2(self.db, sql.cString(using: String.Encoding.utf8), -1, &statement, nil) == SQLITE_OK {
+        if sqlite3_prepare_v2(
+            self.db, sql.cString(using: String.Encoding.utf8), -1, &statement, nil)
+            == SQLITE_OK {
             if sqlite3_step(statement) == SQLITE_DONE {
                 return true
             }
@@ -121,7 +128,9 @@ class SQLiteConnect {
             sql += " where \(condition)"
         }
         
-        if sqlite3_prepare_v2(self.db, sql.cString(using: String.Encoding.utf8), -1, &statement, nil) == SQLITE_OK {
+        if sqlite3_prepare_v2(
+            self.db, sql.cString(using: String.Encoding.utf8), -1, &statement, nil)
+            == SQLITE_OK {
             if sqlite3_step(statement) == SQLITE_DONE {
                 return true
             }

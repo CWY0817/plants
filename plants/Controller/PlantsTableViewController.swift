@@ -10,7 +10,9 @@ import UIKit
 
 class PlantsTableViewController: UITableViewController {
     
-    var db : SQLiteConnect?
+    var db :SQLiteConnect? = nil
+    let sqliteURL = Bundle.main.url(forResource: "ncnuplant", withExtension: "sqlite")
+    let url = Bundle.main.path(forResource: "ncnuplant", ofType: "sqlite")
     
     // MARK: - 植物class陣列
     var plants:[Plants] = []
@@ -26,9 +28,9 @@ class PlantsTableViewController: UITableViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         
         // MARK: - 資料庫
+        
         // 資料庫檔案的路徑
-        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let sqlitePath = urls[urls.count-1].absoluteString + "ncnuplant.sqlite"
+        let sqlitePath = url!
         
         // 印出儲存檔案的位置
         print(sqlitePath)
@@ -38,8 +40,9 @@ class PlantsTableViewController: UITableViewController {
         
         if let mydb = db {
             
+            // select
             let statement = mydb.fetch("plantdata", cond: "1 == 1", order: nil)
-            let statement1 = mydb.fetch("plantLocation_db", cond: "1 == 1", order: nil)
+            let statement1 = mydb.fetch("plantlocation_db", cond: "1 == 1", order: nil)
             let statement2 = mydb.fetch("datatag", cond: "1 == 1", order: nil)
             while sqlite3_step(statement) == SQLITE_ROW{
                 let pid = sqlite3_column_int(statement, 0)
@@ -59,7 +62,7 @@ class PlantsTableViewController: UITableViewController {
                 let tmp = Plants(Pid: pid, Cname: cname, Sname: sname, Othername: othername, Familia: familia, Originplace: originplace, Distribution: distribution, Application: application, Leaf: leaf, Stem: stem, Flower: flower, Fruit: fruit, Startmonth: startmonth, Endmonth: endmonth, Isee: false)
                 plants.append(tmp)
             }
-            
+            sqlite3_finalize(statement)
             
             while sqlite3_step(statement1) == SQLITE_ROW{
                 let pid = sqlite3_column_int(statement1, 0)
@@ -68,6 +71,8 @@ class PlantsTableViewController: UITableViewController {
                 let tmp = Plantslocation(Pid: pid,Latitude: latitude, Longitude: longitude )
                 plantslocation.append(tmp)
             }
+            sqlite3_finalize(statement1)
+            
             while sqlite3_step(statement2) == SQLITE_ROW{
                 let pid = sqlite3_column_int(statement2, 0)
                 let twotofive = sqlite3_column_int(statement2, 1)
@@ -89,7 +94,7 @@ class PlantsTableViewController: UITableViewController {
                 let three = sqlite3_column_int(statement2, 17)
                 let four = sqlite3_column_int(statement2, 18)
                 let five = sqlite3_column_int(statement2, 19)
-                let six = sqlite3_column_int(statement, 20)
+                let six = sqlite3_column_int(statement2, 20)
                 let seven = sqlite3_column_int(statement2, 21)
                 let altermate = sqlite3_column_int(statement2, 22)
                 let opposite = sqlite3_column_int(statement2, 23)
@@ -100,10 +105,8 @@ class PlantsTableViewController: UITableViewController {
                 let aclularleaf = sqlite3_column_int(statement2, 28)
                 let tmp = Plantsdata(Pid: pid, twotofive: twotofive, fivetoseven: fivetoseven, eighttoten: eighttoten, eleventoone: eleventoone, white: white, red: red, orange: orange, yellow: yellow, green: green, blue: blue, purple: purple, brown: brown, other: other, regular: regular, irregular: irregular, composite: composite, three: three, four: four, five: five, six: six, seven: seven, altermate: altermate, opposite: opposite, whorled: whorled, fasciculate: fasciculate, simpleleaf: simpleleaf, compoudleaf: compoudleaf, aclularleaf: aclularleaf)
                 plantsdata.append(tmp)
-                
-                
             }
-            
+            sqlite3_finalize(statement2)
         }
     }
     
