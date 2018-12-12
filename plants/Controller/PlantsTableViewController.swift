@@ -17,11 +17,15 @@ class PlantsTableViewController: UITableViewController {
     var plants:[Plants] = []
     var plantslocation:[Plantslocation] = []
     var plantsdata:[Plantsdata] = []
-    var plantslocationcount : [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    var plantslocationcount = [Int](repeating:0,count:50)
+    var plantslon = [Double](repeating:0,count:170)
+    var plantslat = [Double](repeating:0,count:170)
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //導覽列
     navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default )
@@ -64,12 +68,18 @@ class PlantsTableViewController: UITableViewController {
             }
             sqlite3_finalize(statement)
             
+            var num = 0
             while sqlite3_step(statement1) == SQLITE_ROW{
                 let pid = sqlite3_column_int(statement1, 0)
                 let latitude = sqlite3_column_double(statement1, 1)
                 let longitude = sqlite3_column_double(statement1, 2)
                 let tmp = Plantslocation(Pid: pid,Latitude: latitude, Longitude: longitude )
+                plantslat[num] = latitude
+                plantslon[num] = longitude
+                num = num + 1
                 plantslocation.append(tmp)
+                
+                
             }
             sqlite3_finalize(statement1)
             
@@ -110,6 +120,7 @@ class PlantsTableViewController: UITableViewController {
         }
         
         count()
+        
     }
     
     func count(){
@@ -122,10 +133,6 @@ class PlantsTableViewController: UITableViewController {
                 }
             }
         }
-        
-        /*for index1 in 0...49{
-            print("\(plantslocationcount[index1])")
-        }*/
     }
     
     override func viewWillAppear(_ animated: Bool){
@@ -247,11 +254,13 @@ class PlantsTableViewController: UITableViewController {
                 
                 let num = plantslocationcount[indexPath.row]
                 if num > 0{
-                    for _ in 0...num-1{
+                    for index in 0...num-1{
                         destination.plantslocation = plantslocation[counting]
+                        destination.takelat[index] = plantslat[counting]
+                        destination.takelon[index] = plantslon[counting]
                         counting = counting + 1
-                        print(counting)
                     }
+                    destination.number = num
                 }
             }
         }

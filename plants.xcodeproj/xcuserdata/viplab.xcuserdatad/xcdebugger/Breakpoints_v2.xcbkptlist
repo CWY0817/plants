@@ -2,4 +2,84 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "plants/Controller/MapViewController.swift"
+            timestampString = "566279876.133664"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "MapViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "plants.MapViewController.takelat.getter : Swift.Array&lt;Swift.Double&gt;"
+                  moduleName = "plants"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viplab/Desktop/plants/plants/Controller/MapViewController.swift"
+                  timestampString = "566279876.254934"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "plants.MapViewController.takelat.setter : Swift.Array&lt;Swift.Double&gt;"
+                  moduleName = "plants"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viplab/Desktop/plants/plants/Controller/MapViewController.swift"
+                  timestampString = "566279876.25697"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "plants.MapViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; plants.MapViewController"
+                  moduleName = "plants"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viplab/Desktop/plants/plants/Controller/MapViewController.swift"
+                  timestampString = "566279876.258926"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "488">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "plants.MapViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;plants.MapViewController&gt;"
+                  moduleName = "plants"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viplab/Desktop/plants/plants/Controller/MapViewController.swift"
+                  timestampString = "566279876.261052"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "464">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

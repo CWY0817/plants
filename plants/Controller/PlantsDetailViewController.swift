@@ -13,6 +13,9 @@ class PlantsDetailViewController: UIViewController,UITableViewDataSource,UITable
     
     var plants: Plants = Plants()
     var plantslocation: Plantslocation = Plantslocation()
+    var number:Int = 0
+    var takelon = [Double](repeating:0,count:20)
+    var takelat = [Double](repeating:0,count:20)
     @IBOutlet var tableView:UITableView!
     @IBOutlet var headerView: PlantsDetailHeaderView!
 
@@ -127,8 +130,13 @@ class PlantsDetailViewController: UIViewController,UITableViewDataSource,UITable
             return cell
         case 11:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PlantsDetailMapCell.self), for: indexPath) as! PlantsDetailMapCell
-            cell.configure(plantsPid:plants.Pid,plantslocationPid:plantslocation.Pid,plantsCname:plants.Cname,plantsSname:plants.Sname,latitude:plantslocation.Latitude , longitude:plantslocation.Longitude )
-                print("last")
+           
+            if number > 0 {
+           for index in 0...number-1{
+            cell.configure(plantsPid:plants.Pid,plantslocationPid:plantslocation.Pid,plantsCname:plants.Cname,plantsSname:plants.Sname,latitude:takelat[index] , longitude:takelon[index] )
+                print(takelon[index])
+             }
+            }
             return cell
         default:
             fatalError("Failed to instantiate the table view cell for detail view controller")
@@ -140,6 +148,12 @@ class PlantsDetailViewController: UIViewController,UITableViewDataSource,UITable
             let destinationController = segue.destination as! MapViewController
             destinationController.plants = plants
             destinationController.plantslocation = plantslocation
+            for index in 0...number-1{
+                destinationController.takelat[index] = takelat[index]
+                destinationController.takelon[index] = takelon[index]
+            }
+            destinationController.number = number
+            
         }
     }
     
