@@ -23,7 +23,6 @@ class PlantsDetailViewController: UIViewController,UITableViewDataSource,UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -128,7 +127,8 @@ class PlantsDetailViewController: UIViewController,UITableViewDataSource,UITable
             return cell
         case 11:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PlantsDetailMapCell.self), for: indexPath) as! PlantsDetailMapCell
-            cell.configure(plantsCname:plants.Cname,plantsSname:plants.Sname,plantsPid:plants.Pid ,plantslocationPid:plantslocation.Pid ,latitude:plantslocation.Latitude , longitude:plantslocation.Longitude )
+            cell.configure(plantsPid:plants.Pid,plantslocationPid:plantslocation.Pid,plantsCname:plants.Cname,plantsSname:plants.Sname,latitude:plantslocation.Latitude , longitude:plantslocation.Longitude )
+                print("last")
             return cell
         default:
             fatalError("Failed to instantiate the table view cell for detail view controller")

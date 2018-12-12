@@ -11,13 +11,13 @@ import UIKit
 class PlantsTableViewController: UITableViewController {
     
     var db :SQLiteConnect? = nil
-    let sqliteURL = Bundle.main.url(forResource: "ncnuplant", withExtension: "sqlite")
     let url = Bundle.main.path(forResource: "ncnuplant", ofType: "sqlite")
     
     // MARK: - 植物class陣列
     var plants:[Plants] = []
     var plantslocation:[Plantslocation] = []
     var plantsdata:[Plantsdata] = []
+    var plantslocationcount : [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,6 +108,24 @@ class PlantsTableViewController: UITableViewController {
             }
             sqlite3_finalize(statement2)
         }
+        
+        count()
+    }
+    
+    func count(){
+        for index in 0...plantslocation.count-1{
+            //var count1 = 0
+            for number in 0...49{
+                if (plantslocation[index].Pid - 1) == number {
+                    plantslocationcount[number] = plantslocationcount[number] + 1
+                    break
+                }
+            }
+        }
+        
+        /*for index1 in 0...49{
+            print("\(plantslocationcount[index1])")
+        }*/
     }
     
     override func viewWillAppear(_ animated: Bool){
@@ -219,7 +237,22 @@ class PlantsTableViewController: UITableViewController {
             if let indexPath = tableView.indexPathForSelectedRow{
                 let destination = segue.destination as!PlantsDetailViewController
                 destination.plants = plants[indexPath.row]
-                destination.plantslocation = plantslocation[indexPath.row]
+                var counting = 0
+                if indexPath.row > 0{
+                    for index in 0...indexPath.row-1
+                    {
+                        counting = counting + plantslocationcount[index]
+                    }
+                }
+                
+                let num = plantslocationcount[indexPath.row]
+                if num > 0{
+                    for _ in 0...num-1{
+                        destination.plantslocation = plantslocation[counting]
+                        counting = counting + 1
+                        print(counting)
+                    }
+                }
             }
         }
         

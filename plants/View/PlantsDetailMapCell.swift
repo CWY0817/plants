@@ -10,15 +10,14 @@ import UIKit
 import MapKit
 
 class PlantsDetailMapCell: UITableViewCell {
-    
+
     @IBOutlet var mapview : MKMapView!
     
-    func configure(plantsCname:String,plantsSname:String,plantsPid:Int32 ,plantslocationPid:Int32 ,latitude:Double,longitude:Double){
+    func configure(plantsPid:Int32,plantslocationPid:Int32,plantsCname:String,plantsSname:String,latitude:Double,longitude:Double){
         let objectAnnotation = MKPointAnnotation()
         if plantsPid == plantslocationPid{
             objectAnnotation.coordinate = CLLocation(latitude: latitude, longitude: longitude).coordinate
             objectAnnotation.title = plantsCname
-            objectAnnotation.subtitle = plantsSname
             mapview.addAnnotation(objectAnnotation)
             let region = MKCoordinateRegionMakeWithDistance(objectAnnotation.coordinate, 250, 250)
             mapview.setRegion(region, animated: false)

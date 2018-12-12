@@ -23,14 +23,14 @@ class MapViewController: UIViewController,MKMapViewDelegate {
         mapView.delegate = self
         
         let objectAnnotation = MKPointAnnotation()
-        if plants.Pid == plantslocation.Pid{
+        if plants.Pid == plantslocation.Pid {
         objectAnnotation.coordinate = CLLocation(latitude: plantslocation.Latitude, longitude: plantslocation.Longitude).coordinate
         objectAnnotation.title = plants.Cname
         objectAnnotation.subtitle = plants.Sname
         mapView.addAnnotation(objectAnnotation)
         let region = MKCoordinateRegionMakeWithDistance(objectAnnotation.coordinate, 250, 250)
         mapView.setRegion(region, animated: false)
-        }
+       }
         
             
         mapView.showsCompass = true
