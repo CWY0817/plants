@@ -6,11 +6,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "plants/Controller/MapViewController.swift"
-            timestampString = "566279876.133664"
+            timestampString = "566293655.41195"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -19,64 +19,64 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "plants.MapViewController.takelat.getter : Swift.Array&lt;Swift.Double&gt;"
                   moduleName = "plants"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/viplab/Desktop/plants/plants/Controller/MapViewController.swift"
-                  timestampString = "566279876.254934"
+                  timestampString = "566289549.00165"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
                   endingLineNumber = "21"
-                  offsetFromSymbolStart = "108">
+                  offsetFromSymbolStart = "114">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "plants.MapViewController.takelat.setter : Swift.Array&lt;Swift.Double&gt;"
                   moduleName = "plants"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/viplab/Desktop/plants/plants/Controller/MapViewController.swift"
-                  timestampString = "566279876.25697"
+                  timestampString = "566289549.00535"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
                   endingLineNumber = "21"
-                  offsetFromSymbolStart = "132">
+                  offsetFromSymbolStart = "128">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "plants.MapViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; plants.MapViewController"
                   moduleName = "plants"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/viplab/Desktop/plants/plants/Controller/MapViewController.swift"
-                  timestampString = "566279876.258926"
+                  timestampString = "566289549.009202"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
                   endingLineNumber = "21"
-                  offsetFromSymbolStart = "488">
+                  offsetFromSymbolStart = "616">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "plants.MapViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;plants.MapViewController&gt;"
                   moduleName = "plants"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/viplab/Desktop/plants/plants/Controller/MapViewController.swift"
-                  timestampString = "566279876.261052"
+                  timestampString = "566289549.012009"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
                   endingLineNumber = "21"
-                  offsetFromSymbolStart = "464">
+                  offsetFromSymbolStart = "575">
                </Location>
             </Locations>
          </BreakpointContent>

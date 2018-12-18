@@ -14,8 +14,8 @@ class PlantsDetailViewController: UIViewController,UITableViewDataSource,UITable
     var plants: Plants = Plants()
     var plantslocation: Plantslocation = Plantslocation()
     var number:Int = 0
-    var takelon = [Double](repeating:0,count:20)
-    var takelat = [Double](repeating:0,count:20)
+    var takelon = [Double](repeating:0,count:100)
+    var takelat = [Double](repeating:0,count:100)
     @IBOutlet var tableView:UITableView!
     @IBOutlet var headerView: PlantsDetailHeaderView!
 
@@ -148,12 +148,13 @@ class PlantsDetailViewController: UIViewController,UITableViewDataSource,UITable
             let destinationController = segue.destination as! MapViewController
             destinationController.plants = plants
             destinationController.plantslocation = plantslocation
+            if number > 0{
             for index in 0...number-1{
                 destinationController.takelat[index] = takelat[index]
                 destinationController.takelon[index] = takelon[index]
             }
             destinationController.number = number
-            
+            }
         }
     }
     
